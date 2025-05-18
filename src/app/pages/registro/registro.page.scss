@@ -1,0 +1,49 @@
+.atraslogin{
+    color:#DDE55C;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 20px;
+    left: 20px;
+}
+.Logo-c{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.Logo{
+    /* position: absolute;
+    
+    top: 70px;
+    left: 45px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 280px; /* solo el ancho */
+    height: auto; /* el alto se ajusta automáticamente */
+}
+.textbien{
+    display: flex;
+    color: #DDE55C;
+    position: absolute;
+    position: fixed;
+    top: 250px; /* Ajusta la distancia desde abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    font-size: 19px;
+}
+.btncontinuar {
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    position: fixed;
+    left: 75px;
+    top: 300px;
+  --background: #DDE55C;
+  color: black;
+  font-weight: bold;
+}

@@ -1,0 +1,42 @@
+.botonesinicio1{
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    --background: #DDE55C;
+    --border-radius: 5%;
+    --padding-start: 0;
+    --padding-end: 0;
+    text-align: center;
+    z-index: 1000;
+}
+.botonesinicio2{
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    --background: #DDE55C;
+    --border-radius: 5%;
+    --padding-start: 0;
+    --padding-end: 0;
+    text-align: center;
+    z-index: 1000;
+}
+.imageinicio{
+    position: fixed;
+}
+//{}

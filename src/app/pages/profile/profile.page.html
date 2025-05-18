@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>{{profile?.name}}</h1> <!-- nombre de usuario desde firebase-->
+        <div>
+          <p>NIVEL</p>
+          <p>{{profile?.level}}</p> <!-- nivel de usuario desde firebase-->
+        </div>
+        <div>{{profile?.points}} pts.</div> <!-- puntos de usuario desde firebase-->
+        <div>
+          <h2>Carta favorita</h2>
+          <div>
+            <div>
+              <img src="{{profile?.cartaFavorita.image}}" alt="Carta favorita">
+            </div>
+          </div>
+        </div>
+        <app-menu-profile></app-menu-profile>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

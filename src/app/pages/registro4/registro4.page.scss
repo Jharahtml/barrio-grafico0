@@ -1,0 +1,58 @@
+.atraslogin{
+    color:#DDE55C;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 20px;
+    left: 20px;
+}
+.login-container {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+    margin-top: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btncontinuar {
+  margin-top: 20px;
+  --background: #DDE55C;
+  color: black;
+  font-weight: bold;
+}
+.input-transparent {
+  --background: transparent;
+  --highlight-color-focused: #DDE55C;
+  border-bottom: 1px solid #ccc;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+.btnsredes1{
+    margin-left: 55px;
+    margin-right: 30px;
+    width: 30px;
+    height: 30px;
+}//{}
+.btnsredes2{
+    width: 30px;
+    height: 30px;
+}
+.registrocon{
+    margin-top: 20px;
+}
+.title{
+    margin-bottom: 30px;
+    color:#DDE55C;
+    font-size: 30px;
+}
+.subtitle{
+    margin-bottom: 20px;
+    color:#AD74D6;
+    font-size: 18px;
+}

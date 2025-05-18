@@ -1,0 +1,7 @@
+{
+  "name": "Barrio Grafico",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

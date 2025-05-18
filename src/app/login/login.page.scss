@@ -1,0 +1,81 @@
+
+.loginheader{
+    background: black;
+}
+.atraslogin{
+    color:#DDE55C;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 20px;
+    left: 20px;
+}
+.logo-container{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.login-container div{
+  color: var(--ion-color-primary-contrast);
+}
+.Logo{
+    /* position: absolute;
+    top: 70px;
+    left: 45px; */
+    width: 280px; /* solo el ancho */
+    height: auto; /* el alto se ajusta automáticamente */
+}
+.textbien{
+    display: flex;
+    color: #DDE55C;
+    position: absolute;
+    position: fixed;
+    top: 200px; /* Ajusta la distancia desde abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 25px;
+}
+.login-container {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  top: 250px;
+  position: fixed;
+  background: #AD74D6;
+  padding: 24px;
+  border-radius: 8px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-button {
+  margin-top: 12px;
+  --background: #DDE55C;
+  color: black;
+  font-weight: bold;
+}
+.input-transparent {
+  --background: transparent;
+  --highlight-color-focused: #DDE55C;
+  border-bottom: 1px solid #ccc;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+.btnsredes1{
+    margin-left: 55px;
+    margin-right: 45px;
+    width: 45px;
+    height: 45px;
+}//{}
+.btnsredes2{
+    width: 45px;
+    height: 45px;
+}

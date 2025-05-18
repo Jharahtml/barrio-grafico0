@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="logo-container">
+          <img src="assets/Logo.png"  class="Logo" alt="log" />
+        </div>
+        
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <div class="login-container">
+            <div class="login-box">
+              <div >Usuario</div>
+              <ion-input formControlName="email" type="email" fill="outline" mode="md"></ion-input>
+              <ion-text *ngIf="form.get('email')?.touched && form.get('email')?.valid === false">
+                <p *ngIf="form.get('email')?.errors?.['required']">El Email es requerido</p>
+                <p *ngIf="form.get('email')?.valid===false">Email invalido</p>
+              </ion-text>
+              <div >Contraseña</div>
+               <ion-input formControlName="password" type="password" fill="outline" mode="md"></ion-input>
+              <ion-text *ngIf="form.get('password')?.touched && form.get('password')?.valid === false">
+                <p *ngIf="form.get('password')?.errors?.['required']">El Password es requerido</p>
+              </ion-text>
+            <ion-button type="submit" expand="block" class="login-button">Iniciar sesión</ion-button>
+            <div >¿Olvidaste tú Contraseña?</div>
+              <ion-buttons>
+                <ion-icon class="btnsredes1" name="logo-google"></ion-icon>
+                <ion-icon class="btnsredes2" name="logo-facebook"></ion-icon>
+              </ion-buttons>
+
+          </div>
+         </div> 
+         
+        </form>
+         <ion-icon routerLink="/home" class="atraslogin" name="arrow-back"></ion-icon>
+        <div class="textbien">¡Bienvenido!</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

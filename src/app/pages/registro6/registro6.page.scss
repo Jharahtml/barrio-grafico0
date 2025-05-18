@@ -1,0 +1,55 @@
+.atraslogin{
+    color:#DDE55C;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 20px;
+    left: 20px;
+}
+.login-container {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+    margin-top: 130px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btncontinuar {
+  margin-top: 20px;
+  --background: #DDE55C;
+  color: black;
+  font-weight: bold;
+}
+.title{
+    margin-bottom: 30px;
+    color:#DDE55C;
+    font-size: 30px;
+}
+.subtitle{
+    margin-bottom: 20px;
+    color:#AD74D6;
+    font-size: 18px;
+}
+.terminos-cuadro {
+    width: 300px;
+  height: 270px;
+  background: #AD74D6;
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.terminos-check {
+  margin-bottom: 16px;
+  --background: transparent;
+}

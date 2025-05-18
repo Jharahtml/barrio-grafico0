@@ -1,0 +1,30 @@
+#button {
+  width: 60px;    /* Tamaño personalizado */
+  height: 60px;
+  /* font-size: 8px; */
+  --border-radius: 50%;
+  --background: #DDE55C;
+  --background-hover: #DDE55C;
+  --background-activated: #DDE55C;
+  --background-focused: #DDE55C;
+}
+.button-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+} 
+.icon{
+  width: 30px;    
+  height: 30px;
+}
+.button-label {
+      font-size: 8px;
+      letter-spacing: 0.2px;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+}

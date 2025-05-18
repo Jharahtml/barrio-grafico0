@@ -1,0 +1,13 @@
+<ion-content [fullscreen]="true">
+  <ion-icon routerLink="/home" class="atraslogin" name="arrow-back"></ion-icon>
+  <div class="title">
+    Notificaciones
+  </div>
+  <ion-list class="lista">
+    <ion-item *ngFor="let noti of notificaciones" class="notificacion-item">
+      <ion-label class="notificacion-texto">
+        <p>{{ noti.mensaje }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

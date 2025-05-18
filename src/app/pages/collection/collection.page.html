@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <ion-title size="large">collection</ion-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" *ngFor="let carta of cartas">
+        <div class="carta-container">
+          <img [src]="carta?.image" alt="carta" [routerLink]="['/carta', carta.id]">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
