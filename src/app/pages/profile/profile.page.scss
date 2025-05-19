@@ -1,0 +1,125 @@
+.custom-background {
+  background-color: #111111;
+  color: #f9f06b;
+}
+
+.atraslogin {
+  color: #f9f06b;
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+}
+
+.profile-header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.avatar-border {
+  border: 3px solid #f9f06b;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #222;
+}
+
+.large-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.username {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f9f06b;
+  margin-top: 10px;
+}
+
+.level,
+.points {
+  color: #f9f06b;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 4px;
+}
+
+.activity-card,
+.trade-card {
+  background-color: #a95fd4;
+  color: white;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.favorite-card{
+    border-color: transparent;
+    background-color: transparent;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.card-horizontal {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px; /* espacio entre imagen y texto */
+}
+
+.card-img {
+  width: 70px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-img-trade {
+  width: 50px;
+  display: block;
+
+}
+
+.textperfil{
+    position: absolute;
+    color: #f9f06b;
+    font-size: 1.3rem;
+    left: 60px;
+}
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  row-gap: 20px;
+  margin-top: 20px;
+}
+
+.icon-button {
+  background-color: #e1ef36;
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.icon-button ion-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.bottom-icon:nth-of-type(4) {
+  grid-column: 1.5; 
+}
+
+.bottom-icon:nth-of-type(5) {
+  grid-column: 2.5; 
+}

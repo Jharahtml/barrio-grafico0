@@ -1,29 +1,61 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!-- Combinamos los headers -->
+    <ion-icon slot="start" routerLink="/registro" class="atraslogin" name="arrow-back"></ion-icon>
     <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h1>{{profile?.name}}</h1> <!-- nombre de usuario desde firebase-->
-        <div>
-          <p>NIVEL</p>
-          <p>{{profile?.level}}</p> <!-- nivel de usuario desde firebase-->
+<ion-content [fullscreen]="true" class="ion-padding custom-background">
+  <!-- Avatar y datos del usuario (del segundo código) -->
+  <div class="profile-header">
+    <ion-avatar class="avatar-border large-avatar">
+      <img [src]="profile?.image || 'assets/fotoperfil.jpg'" />
+    </ion-avatar>
+    <ion-label class="username">{{ profile?.name || 'Nombre de usuario' }}</ion-label>
+    <ion-label class="level">NIVEL: {{profile?.level}}</ion-label>
+    <ion-label class="points">{{ profile?.points || 0 }} pts</ion-label>
+  </div>
+
+  <!-- Sección de carta favorita (combinación de ambos) -->
+  <ion-card class="favorite-card">
+    <ion-card-header>
+      <ion-card-title>Carta favorita</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="card-horizontal">
+        <img [src]="profile?.cartaFavorita?.image || 'assets/cards/microBless.png'" class="card-img" />
+        <div class="card-info">
+          <p><strong>Artista:</strong> {{ profile?.cartaFavorita?.artist || 'BLESS' }}</p>
+          <p><strong>Técnica:</strong> {{ profile?.cartaFavorita?.technique || 'Graffiti' }}</p>
+          <p><strong>Rareza:</strong> {{ profile?.cartaFavorita?.rarity || 'Shiny' }}</p>
+          <p><strong>Ubicación:</strong> {{ profile?.cartaFavorita?.address || 'Plaza Avaroa' }}</p>
         </div>
-        <div>{{profile?.points}} pts.</div> <!-- puntos de usuario desde firebase-->
-        <div>
-          <h2>Carta favorita</h2>
-          <div>
-            <div>
-              <img src="{{profile?.cartaFavorita.image}}" alt="Carta favorita">
-            </div>
-          </div>
-        </div>
-        <app-menu-profile></app-menu-profile>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Menú inferior (del segundo código) -->
+  <div class="icon-grid">
+    <div class="icon-button">
+      <ion-icon name="bar-chart-outline"></ion-icon>
+      <span>HISTORIAL</span>
+    </div>
+    <div class="icon-button">
+      <ion-icon name="people-outline"></ion-icon>
+      <span>AMIGOS</span> <!-- Corregí "AMIGODS" a "AMIGOS" -->
+    </div>
+    <div class="icon-button">
+      <ion-icon name="book-outline"></ion-icon>
+      <span>COLECCIÓN</span>
+    </div>
+    <div class="icon-button bottom-icon">
+      <ion-icon name="color-palette-outline"></ion-icon>
+      <span>EDITAR</span>
+    </div>
+    <div class="icon-button bottom-icon">
+      <ion-icon name="settings-outline"></ion-icon>
+      <span>AJUSTES</span>
+    </div>
+  </div>
 </ion-content>
