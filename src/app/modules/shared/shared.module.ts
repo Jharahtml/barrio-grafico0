@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuProfileComponent } from 'src/app/components/menu-profile/menu-profile.component';
 import { IonicModule } from '@ionic/angular';
+import { CartaModalComponent } from 'src/app/components/carta-modal/carta-modal.component';
 
 
 
 @NgModule({
-  declarations: [MenuProfileComponent],
+  declarations: [MenuProfileComponent, CartaModalComponent],
   imports: [
-    CommonModule, IonicModule
+    CommonModule, IonicModule,
   ],
   exports:[
-    MenuProfileComponent
+    MenuProfileComponent, CartaModalComponent
   ]
 })
 export class SharedModule { }

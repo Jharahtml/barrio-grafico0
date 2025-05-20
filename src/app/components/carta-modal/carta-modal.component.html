@@ -1,0 +1,24 @@
+<!-- <ion-modal [isOpen]="true"> -->
+  <ng-container *ngIf="carta">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+         <ion-button (click)="cerrarModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-title>{{ carta?.title }}</ion-title>
+      <img [src]="carta?.image" alt="Imagen de la carta">
+      <p>{{ carta?.points }}</p>
+      <p>{{carta?.technique}}</p>
+      <p>{{carta?.year}}</p>
+      <p>{{carta?.type}}</p>
+      <p>{{carta?.address}}</p>
+
+    </ion-content>
+  </ng-container>
+<!-- </ion-modal> -->
