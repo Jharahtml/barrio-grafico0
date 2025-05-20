@@ -1,48 +1,21 @@
-<!-- <ion-header [translucent]="true">
+<ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-icon slot="start" routerLink="/registro" class="atraslogin" name="arrow-back"></ion-icon>
     <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h1>{{profile?.name}}</h1>
-        <div>
-          <p>NIVEL</p>
-          <p>{{profile?.level}}</p> 
-        </div>
-        <div>{{profile?.points}} pts.</div>
-        <div>
-          <h2>Carta favorita</h2>
-          <div>
-            <div>
-              <img src="{{profile?.cartaFavorita.image}}" alt="Carta favorita">
-            </div>
-          </div>
-        </div>
-        <app-menu-profile></app-menu-profile>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content> -->
-
-
 <ion-content class="ion-padding custom-background">
-  <ion-icon routerLink="/registro" class="atraslogin" name="arrow-back"></ion-icon>
-  <div class="textperfil">Perfil</div>
-
   <!-- Avatar e información del usuario -->
   <div class="profile-header">
     <ion-avatar class="avatar-border large-avatar">
       <img alt="" [src]="userData?.photoURL || 'assets/fotoperfil.jpg'" />
     </ion-avatar>
     <ion-label class="username">{{ userData?.displayName || 'Nombre de usuario' }}</ion-label>
-    <ion-label class="level">NIVEL</ion-label>
     <ion-label class="points">{{ userData?.points || 0 }} pts</ion-label>
   </div>
 
+  <!-- Carta favorita -->
   <ion-card class="favorite-card">
     <ion-card-header>
       <ion-card-title>Carta favorita</ion-card-title>
@@ -58,7 +31,9 @@
         </div>
       </div>
     </ion-card-content>
-  </ion-card> 
+  </ion-card>
+
+  <!-- Menú inferior (conservando "AMIGODS") -->
   <div class="icon-grid">
     <div class="icon-button">
       <ion-icon name="bar-chart-outline"></ion-icon>
@@ -82,5 +57,4 @@
     </div>
   </div>
   <app-menu-profile></app-menu-profile>
-
 </ion-content>
