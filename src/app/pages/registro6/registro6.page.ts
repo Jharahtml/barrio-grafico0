@@ -44,10 +44,11 @@ export class Registro6Page implements OnInit {
 };
   console.log('Datos del usuario:', datosUser);
 
-  this.auth.registerUser(datosUser.email, datosUser.password, { name: datosUser.name, avatar: datosUser.avatar })
+  this.auth.registerUser(datosUser.email, datosUser.password, datosUser)
   .then(() => {
       console.log('Registro exitoso, redirigiendo al perfil...');
-      this.router.navigate(['/profile']); 
+     // this.router.navigate(['/profile']); 
+     this.auth.loginUser(datosUser.email, datosUser.password)
     })
     .catch(error => {
       console.error('Error al registrar usuario:', error);

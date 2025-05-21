@@ -11,10 +11,13 @@
 <div *ngIf="cartas.length === 0">
 <p>No hay cartas disponibles.</p>
 </div>
+<ion-button (click)="filterByType('all')">Todos</ion-button>
+<ion-button (click)="filterByType('shiny')">Shiny</ion-button>
+<ion-button (click)="filterByType('normal')">Normal</ion-button>
 
   <ion-grid>
     <ion-row>
-      <ion-col size="12" size-md="4" *ngFor="let carta of cartas">
+      <ion-col size="12" size-md="4" *ngFor="let carta of filteredCartas">
         <div class="carta-container" (click)="abrirModal(carta)">
           <img [src]="carta?.image" alt="carta">
 
