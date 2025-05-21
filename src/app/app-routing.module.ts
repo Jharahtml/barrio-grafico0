@@ -55,10 +55,10 @@ const routes: Routes = [
     path: 'collection',
     loadChildren: () => import('./pages/collection/collection.module').then( m => m.CollectionPageModule)
   },
-  
-  
-  
-  
+  {
+    path: 'amigoperfil',
+    loadChildren: () => import('./amigoperfil/amigoperfil.module').then( m => m.AmigoperfilPageModule)
+  }
 ];
 
 @NgModule({

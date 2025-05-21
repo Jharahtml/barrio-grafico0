@@ -1,0 +1,122 @@
+.custom-background {
+  background-color: #111111;
+  color: #f9f06b;
+}
+
+.atraslogin {
+  color: #f9f06b;
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+}
+
+.profile-header {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.avatar-border {
+  border: 3px solid #f9f06b;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #222;
+}
+
+.large-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.username {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f9f06b;
+  margin-top: 10px;
+}
+
+.level,
+.points {
+  color: #f9f06b;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 4px;
+}
+
+.activity-card,
+.trade-card {
+  background-color: #a95fd4;
+  color: white;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.favorite-card{
+    border-color: transparent;
+    background-color: transparent;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.card-horizontal {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px; /* espacio entre imagen y texto */
+}
+
+.card-img {
+  width: 70px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-img-trade {
+  width: 50px;
+  display: block;
+
+}
+
+.section-title {
+  color: #f9f06b; /* Amarillo para coincidir con tu tema */
+  margin: 25px 0 10px 16px; /* Espaciado superior/lateral */
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Estructura compacta */
+.content-container {
+  padding: 16px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Espacio uniforme entre secciones */
+}
+
+/* Cards más compactos */
+.compact-content {
+  padding: 12px !important;
+}
+
+/* Ajuste de títulos */
+.section-title {
+  color: #f9f06b;
+  margin: 8px 0 4px 0;
+  font-size: 1rem;
+}
+
+/* Optimización de espacio en cards */
+.activity-card, .trade-card {
+  margin-top: 0;
+  ion-card-content {
+  min-height: 0;       /* Edge/Chrome/Firefox */
+  height: unset;       /* Alternativa segura */
+  padding: 12px !important;
+}
+}

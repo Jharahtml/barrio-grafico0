@@ -10,7 +10,7 @@
   <!-- Avatar y datos del usuario (del segundo código) -->
   <div class="profile-header">
     <ion-avatar class="avatar-border large-avatar">
-      <img [src]="profile?.image || 'assets/fotoperfil.jpg'" />
+      <img alt="" [src]="profile?.image || 'assets/fotoperfil.jpg'" />
     </ion-avatar>
     <ion-label class="username">{{ profile?.name || 'Nombre de usuario' }}</ion-label>
     <ion-label class="level">NIVEL: {{profile?.level}}</ion-label>
@@ -24,7 +24,7 @@
     </ion-card-header>
     <ion-card-content>
       <div class="card-horizontal">
-        <img [src]="profile?.cartaFavorita?.image || 'assets/cards/microBless.png'" class="card-img" />
+        <img alt="" [src]="profile?.cartaFavorita?.image || 'assets/cards/microBless.png'" class="card-img" />
         <div class="card-info">
           <p><strong>Artista:</strong> {{ profile?.cartaFavorita?.artist || 'BLESS' }}</p>
           <p><strong>Técnica:</strong> {{ profile?.cartaFavorita?.technique || 'Graffiti' }}</p>
@@ -58,4 +58,5 @@
       <span>AJUSTES</span>
     </div>
   </div>
+  <app-menu-profile></app-menu-profile>
 </ion-content>

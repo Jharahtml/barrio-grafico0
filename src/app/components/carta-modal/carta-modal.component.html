@@ -1,24 +1,49 @@
-<!-- <ion-modal [isOpen]="true"> -->
-  <ng-container *ngIf="carta">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="end">
-         <ion-button (click)="cerrarModal()">
-        <ion-icon name="close-outline"></ion-icon>
-      </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
+<ng-container *ngIf="carta">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button (click)="cerrarModal()">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-    <ion-content>
-        <ion-title>{{ carta?.title }}</ion-title>
-      <img [src]="carta?.image" alt="Imagen de la carta">
-      <p>{{ carta?.points }}</p>
-      <p>{{carta?.technique}}</p>
-      <p>{{carta?.year}}</p>
-      <p>{{carta?.type}}</p>
-      <p>{{carta?.address}}</p>
+  <ion-content [fullscreen]="true" class="fondo">
+    <div class="contenedor-principal">
 
-    </ion-content>
-  </ng-container>
-<!-- </ion-modal> -->
+      <div class="contenido">
+        <!-- Título dinámico desde Firebase -->
+        <ion-title class="titulo-microbless">{{ carta?.title }}</ion-title>
+
+        <!-- Imagen dinámica desde Firebase -->
+        <img [src]="carta?.image" alt="Ilustración MicroBless" class="imagen-ilustracion" />
+
+        <!-- Puntos dinámicos -->
+        <div class="puntos">
+          <ion-badge class="badge-amarillo">{{ carta?.points }}</ion-badge>
+        </div>
+
+        <!-- Info dinámica -->
+        <div class="info">
+          <div class="info-item">
+            <ion-icon name="color-palette" class="icono"></ion-icon>
+            <span>TÉCNICA: {{ carta?.technique }}</span>
+          </div>
+          <div class="info-item">
+            <ion-icon name="calendar" class="icono"></ion-icon>
+            <span>AÑO: {{ carta?.year }}</span>
+          </div>
+          <div class="info-item">
+            <ion-icon name="star" class="icono"></ion-icon>
+            <span>TIPO: {{ carta?.type }}</span>
+          </div>
+          <div class="info-item">
+            <ion-icon name="location" class="icono"></ion-icon>
+            <span>UBICACIÓN: {{ carta?.address }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ng-container>
