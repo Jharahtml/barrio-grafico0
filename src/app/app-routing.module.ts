@@ -58,6 +58,18 @@ const routes: Routes = [
   {
     path: 'amigoperfil',
     loadChildren: () => import('./amigoperfil/amigoperfil.module').then( m => m.AmigoperfilPageModule)
+  },
+  {
+    path: 'formaspago',
+    loadChildren: () => import('./formaspago/formaspago.module').then( m => m.FormaspagoPageModule)
+  },
+  {
+    path: 'tarjetas',
+    loadChildren: () => import('./tarjetas/tarjetas.module').then( m => m.TarjetasPageModule)
+  },
+  {
+    path: 'amigos',
+    loadChildren: () => import('./amigos/amigos.module').then( m => m.AmigosPageModule)
   }
 ];
 
