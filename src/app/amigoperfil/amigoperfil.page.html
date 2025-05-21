@@ -1,13 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>amigoperfil</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="custom-background">
+  <div class="content-container">
+    <ion-icon routerLink="/registro" class="atraslogin" name="arrow-back"></ion-icon>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">amigoperfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- Avatar e información -->
+    <div class="profile-header">
+      <ion-avatar class="avatar-border large-avatar">
+        <img alt="" src="assets/amigoPerfil.png" />
+      </ion-avatar>
+      <ion-label class="username">Nombre de usuario</ion-label>
+      <ion-label class="level">NIVEL</ion-label>
+      <ion-label class="points">0 pts</ion-label>
+    </div>
+
+    <!-- Carta favorita -->
+    <ion-card class="favorite-card">
+      <ion-card-header>
+        <ion-card-title>Carta favorita</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="card-horizontal">
+          <img alt="" src="assets/cards/microBless.png" class="card-img" />
+          <div class="card-info">
+            <p><strong>Artista:</strong> BLESS</p>
+            <p><strong>Técnica:</strong> Graffiti</p>
+            <p><strong>Rareza:</strong> Shiny</p>
+            <p><strong>Ubicación:</strong> Plaza Avaroa</p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Actividad reciente -->
+    <h4 class="section-title">Actividad</h4>
+    <ion-card class="activity-card">
+      <ion-card-content class="compact-content">
+        ¡Jugador ha encontrado un SHON!
+        <small>2 días</small>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Intercambio -->
+    <h4 class="section-title">Intercambio disponible</h4>
+    <ion-card class="trade-card">
+      <ion-card-content class="compact-content">
+        <img alt="" src="assets/cards/kadeton.png" class="card-img-trade" />
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
