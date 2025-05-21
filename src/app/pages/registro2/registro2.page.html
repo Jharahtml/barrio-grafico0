@@ -4,16 +4,22 @@
     <div class="login-box">
       <div class="title">Tu pase de entrada empieza aquí</div>
       <div class="subtitle">Ingresa tu correo</div>
+      <form [formGroup]="form" (ngSubmit)="avanzar()">
       <div >Correo</div>
       <ion-item class="input-transparent">
-        <ion-input fill="outline" type="text"></ion-input>
+        <ion-input formControlName="email" fill="outline" type="text"></ion-input>
       </ion-item>
+      <ion-button type="submit" expand="block" class="btncontinuar">Siguiente</ion-button>
+
+      </form>
+
       <ion-buttons class="registrocon">
         Registrarse con
         <ion-icon class="btnsredes1" name="logo-google"></ion-icon>
         <ion-icon class="btnsredes2" name="logo-facebook"></ion-icon>
       </ion-buttons>
-      <ion-button routerLink="/registro3" expand="block" class="btncontinuar">Siguiente</ion-button>
+      <!-- <ion-button routerLink="/registro3" expand="block" class="btncontinuar">Siguiente</ion-button> -->
+
     </div>
   </div>
 </ion-content>

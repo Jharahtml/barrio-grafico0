@@ -18,7 +18,7 @@
         <ion-label>Acepto los términos y condiciones</ion-label>
       </ion-item>
       </div>
-      <ion-button [disabled]="!aceptado" routerLink="/home" expand="block" class="btncontinuar">Finalizar</ion-button>
+      <ion-button [disabled]="!aceptado" (click)="finalizarRegistro()" expand="block" class="btncontinuar">Finalizar</ion-button>
     </div>
   </div>
 </ion-content>

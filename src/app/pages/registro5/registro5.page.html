@@ -5,17 +5,17 @@
       <div class="title">¡Elige tu jeta! </div>
       <div class="subtitle">Elige tu avatar</div>
         <div class="fotos-grid">
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
-          <img src="assets/fotoperfil.jpg" />
+          <img *ngFor="let avatar of avatars" 
+             [src]="avatar.src" 
+             (click)="selectAvatar(avatar.src)"
+             [class.selected]="avatar.src === selectedAvatar"/>
+
+            <!-- <img [src]="avatar.src" [class.selected]="avatar.src === selectedAvatar"/> -->
+          
         </div>
-      <ion-button routerLink="/registro6" expand="block" class="btncontinuar">Siguiente</ion-button>
+        <ion-button (click)="confirmAvatar()" expand="block" class="btncontinuar">Siguiente</ion-button>
+
+      <!-- <ion-button routerLink="/registro6" expand="block" class="btncontinuar">Siguiente</ion-button> -->
     </div>
   </div>
 </ion-content>

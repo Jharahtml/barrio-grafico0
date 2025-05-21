@@ -4,11 +4,13 @@
     <div class="login-box">
       <div class="title">¿Cómo quieres que te conozcan en la ciudad?</div>
       <div class="subtitle">Elige tu nombre en el juego</div>
+      <form [formGroup]="form" (ngSubmit)= "avanzar()">
       <div >Nombre de Usuario</div>
       <ion-item class="input-transparent">
-        <ion-input fill="outline" type="text"></ion-input>
+        <ion-input formControlName="name" fill="outline" type="text"></ion-input>
       </ion-item>
-      <ion-button routerLink="/registro5" expand="block" class="btncontinuar">Siguiente</ion-button>
+      <ion-button type="submit" expand="block" class="btncontinuar">Siguiente</ion-button>
+    </form>
     </div>
   </div>
 </ion-content>

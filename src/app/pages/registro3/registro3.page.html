@@ -4,15 +4,21 @@
     <div class="login-box">
       <div class="title">Tu acceso al mundo del arte urbano</div>
       <div class="subtitle">Crea una contraseña segura</div>
+      <form [formGroup]="form" (ngSubmit)="avanzar()">
       <div>Contraseña</div>
       <ion-item class="input-transparent">
-        <ion-input fill="outline" type="text"></ion-input>
+        <ion-input formControlName="password" fill="outline" type="text"></ion-input>
       </ion-item>
       <div >Confirmar Contraseña</div>
       <ion-item class="input-transparent">
-        <ion-input fill="outline" type="text"></ion-input>
+        <ion-input formControlName="confirmPassword" fill="outline" type="text"></ion-input>
       </ion-item>
-      <ion-button routerLink="/registro4" expand="block" class="btncontinuar">Siguiente</ion-button>
+      <p *ngIf="form.controls['confirmPassword'].touched && form.controls['confirmPassword'].dirty && form.errors?.['mismatch']" class="error">
+      Las contraseñas no coinciden</p>
+
+      <ion-button type="submit" expand="block" class="btncontinuar">Siguiente</ion-button>
+      </form>
+
     </div>
   </div>
 </ion-content>
