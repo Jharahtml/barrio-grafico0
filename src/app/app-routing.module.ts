@@ -58,10 +58,6 @@ const routes: Routes = [
   {
     path: 'amigoperfil',
     loadChildren: () => import('./amigoperfil/amigoperfil.module').then( m => m.AmigoperfilPageModule)
-  },
-  {
-    path: 'coleccion1',
-    loadChildren: () => import('./coleccion1/coleccion1.module').then( m => m.Coleccion1PageModule)
   }
 ];
 

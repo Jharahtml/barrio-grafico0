@@ -1,0 +1,62 @@
+.fondo {
+  --background: #1D1D20;
+}
+
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.contenido {
+  margin-top: 20px; // Esto baja todo el contenido menos la flecha
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-microbless {
+  color: #DDE55C;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.imagen-ilustracion {
+  width: 80%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.puntos {
+  margin-bottom: 20px;
+}
+
+.badge-amarillo {
+  --background: #DDE55C;
+  color: #1D1D20;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.info {
+  color: #DDE55C;;
+  text-align: center;
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+
+    .icono {
+      margin-right: 8px;
+      color: #DDE55C;
+      font-size: 15px;
+    }
+  }
+}
