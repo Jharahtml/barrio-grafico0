@@ -1,0 +1,43 @@
+
+
+<ion-content class="ion-padding custom-background">
+  <ion-icon routerLink="/registro" class="atraslogin" name="arrow-back"></ion-icon>
+  <ion-title class="titulo">Amigos</ion-title>
+  <div class="linea-decorativa"></div>
+
+  <!-- Buscador y QR -->
+  <div class="buscador-container">
+    <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+    <ion-icon name="qr-code-outline" class="qr-icon"></ion-icon>
+  </div>
+
+  <!-- Lista de amigos -->
+  <ion-list class="lista-amigos">
+    <ion-item class="amigo-item">
+      <ion-avatar slot="start">
+        <img alt="" src="assets/fotoperfil.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2 class="nombre">SHON</h2>
+        <p class="id">ID</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Navegación inferior -->
+  <div class="nav-inferior">
+    <ion-button fill="clear" class="nav-btn" routerLink="/amigos" button>
+      <ion-icon name="people" slot="icon-only"></ion-icon>
+      <p>AMIGOS</p>
+    </ion-button>
+    <ion-button fill="clear"class="nav-btn" routerLink="/enviadas" button>
+      <ion-icon name="swap-horizontal" slot="icon-only"></ion-icon>
+      <p>ENVIADAS</p>
+    </ion-button>
+    <ion-button fill="clear" class="nav-btn activo" routerLink="/recibidas" button>
+      <ion-icon name="book" slot="icon-only"></ion-icon>
+      <p>RECIBIDAS</p>
+    </ion-button>
+  </div>
+</ion-content>

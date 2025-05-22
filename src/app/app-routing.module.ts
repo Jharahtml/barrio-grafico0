@@ -70,6 +70,18 @@ const routes: Routes = [
   {
     path: 'amigos',
     loadChildren: () => import('./amigos/amigos.module').then( m => m.AmigosPageModule)
+  },
+  {
+    path: 'amigos1',
+    loadChildren: () => import('./amigos1/amigos1.module').then( m => m.Amigos1PageModule)
+  },
+  {
+    path: 'enviadas',
+    loadChildren: () => import('./enviadas/enviadas.module').then( m => m.EnviadasPageModule)
+  },
+  {
+    path: 'recibidas',
+    loadChildren: () => import('./recibidas/recibidas.module').then( m => m.RecibidasPageModule)
   }
 ];
 
