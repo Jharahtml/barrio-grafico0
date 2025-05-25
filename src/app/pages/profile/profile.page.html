@@ -10,10 +10,10 @@
   <!-- Avatar y datos del usuario (del segundo código) -->
   <div class="profile-header">
     <ion-avatar class="avatar-border large-avatar">
-      <img alt="" [src]="profile?.image || 'assets/fotoperfil.jpg'" />
+      <img alt="" [src]="profile?.avatar " />
     </ion-avatar>
     <ion-label class="username">{{ profile?.name || 'Nombre de usuario' }}</ion-label>
-    <ion-label class="level">NIVEL: {{profile?.level}}</ion-label>
+    <ion-label class="level">NIVEL: {{profile?.level || 0}} </ion-label>
     <ion-label class="points">{{ profile?.points || 0 }} pts</ion-label>
   </div>
 

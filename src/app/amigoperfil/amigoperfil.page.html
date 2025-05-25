@@ -3,28 +3,28 @@
     <ion-icon routerLink="/registro" class="atraslogin" name="arrow-back"></ion-icon>
 
     <!-- Avatar e información -->
-    <div class="profile-header">
+    <div class="profile-header" *ngIf="amigo">
       <ion-avatar class="avatar-border large-avatar">
         <img alt="" src="assets/amigoPerfil.png" />
       </ion-avatar>
-      <ion-label class="username">Nombre de usuario</ion-label>
-      <ion-label class="level">NIVEL</ion-label>
-      <ion-label class="points">0 pts</ion-label>
+      <ion-label class="username">{{amigo.name}}</ion-label>
+      <ion-label class="level">NIVEL: {{amigo.level}}</ion-label>
+      <ion-label class="points">{{amigo.points}}</ion-label>
     </div>
 
     <!-- Carta favorita -->
-    <ion-card class="favorite-card">
+    <ion-card class="favorite-card" *ngIf="amigo?.cartaFavorita">
       <ion-card-header>
         <ion-card-title>Carta favorita</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div class="card-horizontal">
-          <img alt="" src="assets/cards/microBless.png" class="card-img" />
+          <img alt="" [src]="amigo.cartaFavorita.image" class="card-img" />
           <div class="card-info">
-            <p><strong>Artista:</strong> BLESS</p>
-            <p><strong>Técnica:</strong> Graffiti</p>
-            <p><strong>Rareza:</strong> Shiny</p>
-            <p><strong>Ubicación:</strong> Plaza Avaroa</p>
+            <p><strong>Artista: </strong>{{amigo.cartaFavorita.artist}}</p>
+            <p><strong>Técnica: </strong>{{amigo.cartaFavorita.technique || ''}}</p>
+            <p><strong>Rareza: </strong>{{amigo.cartaFavorita.type}}</p>
+            <p><strong>Ubicación: </strong>{{amigo.cartaFavorita.address}}</p>
           </div>
         </div>
       </ion-card-content>
@@ -32,7 +32,7 @@
 
     <!-- Actividad reciente -->
     <h4 class="section-title">Actividad</h4>
-    <ion-card class="activity-card">
+    <ion-card class="activity-card" >
       <ion-card-content class="compact-content">
         ¡Jugador ha encontrado un SHON!
         <small>2 días</small>
@@ -41,9 +41,9 @@
 
     <!-- Intercambio -->
     <h4 class="section-title">Intercambio disponible</h4>
-    <ion-card class="trade-card">
+    <ion-card class="trade-card" *ngIf="amigo?.trade">
       <ion-card-content class="compact-content">
-        <img alt="" src="assets/cards/kadeton.png" class="card-img-trade" />
+        <img alt="" [src]="amigo?.trade?.image" class="card-img-trade" />
       </ion-card-content>
     </ion-card>
   </div>

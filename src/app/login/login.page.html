@@ -10,7 +10,7 @@
         <form [formGroup]="form" (ngSubmit)="login()">
           <div class="login-container">
             <div class="login-box">
-              <div >Usuario</div>
+              <div >Correo</div>
               <ion-input formControlName="email" type="email" fill="outline" mode="md"></ion-input>
               <ion-text *ngIf="form.get('email')?.touched && form.get('email')?.valid === false">
                 <p *ngIf="form.get('email')?.errors?.['required']">El Email es requerido</p>

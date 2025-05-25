@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 export class Registro5Page implements OnInit {
   avatars = [
   { id: 1, src: '../../../assets/fotoperfil.jpg' },
-  { id: 2, src: '../../../assets/fotoperfil.jpg' },
+  { id: 2, src: '../../../assets/fotoperfil2.jpg' },
   { id: 3, src: '../../../assets/fotoperfil.jpg' },
-  { id: 4, src: '../../../assets/fotoperfil.jpg' },
+  { id: 4, src: '../../../assets/fotoperfil2.jpg' },
   { id: 5, src: '../../../assets/fotoperfil.jpg' },
-  { id: 6, src: '../../../assets/fotoperfil.jpg' },
+  { id: 6, src: '../../../assets/fotoperfil2.jpg' },
   { id: 7, src: '../../../assets/fotoperfil.jpg' },
-  { id: 8, src: '../../../assets/fotoperfil.jpg' },
+  { id: 8, src: '../../../assets/fotoperfil2.jpg' },
   { id: 9, src: '../../../assets/fotoperfil.jpg' }
 ];
 selectedAvatar = ''; 

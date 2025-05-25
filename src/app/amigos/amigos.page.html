@@ -9,33 +9,29 @@
 
     <!-- Buscador y QR -->
     <div class="buscador-container">
-      <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+      <ion-searchbar placeholder="Buscar" class="custom-searchbar" (ionInput)="buscarAmigo($event.target.value || '')"></ion-searchbar>
       <ion-icon name="qr-code-outline" class="qr-icon"></ion-icon>
     </div>
 
     <!-- Lista de amigos -->
-    <ion-list class="lista-amigos">
-      <ion-item class="amigo-item">
-        <ion-avatar slot="start">
-          <img alt="Foto de perfil de SHON" src="assets/fotoperfil.jpg" />
-        </ion-avatar>
-        <ion-label>
-          <h2 class="nombre">SHON</h2>
-          <p class="id">ID: 12345</p>
-        </ion-label>
-      </ion-item>
+    <ion-list class="lista-amigos" >
+      <ion-item class="amigo-item" *ngFor="let amigo of resultadoBusqueda.length > 0 ? resultadoBusqueda : amigos"
+            [routerLink]="['/amigoperfil', amigo.id]">
 
-      <ion-item class="amigo-item seleccionado">
         <ion-avatar slot="start">
-          <img alt="Foto de perfil de Kdeton" src="assets/fotoperfil.jpg" />
+          <img alt="Foto de perfil" src="{{amigo?.avatar}}" />
         </ion-avatar>
         <ion-label>
-          <h2 class="nombre">Kdeton</h2>
-          <p class="id">ID: 67890</p>
+          <h2 class="nombre">{{amigo?.name}}</h2>
+          <p class="id">ID:{{amigo?.id}}</p>
         </ion-label>
       </ion-item>
     </ion-list>
+    <div *ngIf="amigos.length === 0">
+      <p>No hay amigos disponibles.</p>
+    </div>
   </div>
+
 
   <!-- Navegación inferior (fija en el fondo, sin margen) -->
   <div class="nav-inferior">

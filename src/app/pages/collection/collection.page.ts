@@ -38,7 +38,7 @@ export class CollectionPage implements OnInit {
 }
 filterByType(type: string) {
     console.log('Filtrando cartas por tipo:', type);
-    if (type === '') { 
+    if (type.toLowerCase() === 'all') { 
       this.filteredCartas = this.cartas; 
     } else if (type.toLowerCase() === 'shiny'){
       this.filteredCartas = this.cartas.filter(carta => carta.type?.toLowerCase() === 'shiny');

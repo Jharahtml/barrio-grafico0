@@ -56,7 +56,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/collection/collection.module').then( m => m.CollectionPageModule)
   },
   {
-    path: 'amigoperfil',
+    path: 'amigoperfil/:id',
     loadChildren: () => import('./amigoperfil/amigoperfil.module').then( m => m.AmigoperfilPageModule)
   },
   {
