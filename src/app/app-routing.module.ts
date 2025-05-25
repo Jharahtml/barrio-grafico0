@@ -82,7 +82,15 @@ const routes: Routes = [
   {
     path: 'recibidas',
     loadChildren: () => import('./recibidas/recibidas.module').then( m => m.RecibidasPageModule)
+  },  {
+    path: 'lacomercio',
+    loadChildren: () => import('./lacomercio/lacomercio.module').then( m => m.LacomercioPageModule)
+  },
+  {
+    path: 'canasta',
+    loadChildren: () => import('./canasta/canasta.module').then( m => m.CanastaPageModule)
   }
+
 ];
 
 @NgModule({

@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #DDE55C;" menu="m1"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fondo-negro">
+
+  <!-- TÍTULO DENTRO DEL CONTENIDO -->
+  <h1 class="titulo-la-comercio">La Comercio</h1>
+
+  <div class="barra-progreso"></div>
+
+  <div class="top-bar">
+  <div class="puntos">
+    <ion-icon name="logo-usd"></ion-icon>
+    <span>10000</span>
+  </div>
+  <ion-icon
+    name="basket"
+    routerLink="/canasta"
+    class="canasta-icon">
+  </ion-icon>
+  </div>
+
+
+  <div class="seccion">
+    <h2 class="seccion-titulo">Productos</h2>
+    <div class="grid">
+      <div class="item">
+        <img alt="" src="assets/tienda/bolso.png">
+        <p class="nombre">BOLSO QHESPY</p>
+        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
+      </div>
+      <div class="item">
+        <img alt="" src="assets/tienda/polera.png">
+        <p class="nombre">POLERA ALE</p>
+        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
+      </div>
+      <div class="item">
+        <img alt="" src="assets/tienda/sticker.png">
+        <p class="nombre">STICKER DE MAT21</p>
+        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <h2 class="seccion-titulo">Pases</h2>
+    <div class="grid">
+      <div class="item">
+        <img alt="" src="assets/tienda/mascara.png">
+        <p class="nombre">EXPOSICIÓN DE MÁSCARAS</p>
+        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
+      </div>
+      <div class="item">
+        <img alt="" src="assets/tienda/fotografica.png">
+        <p class="nombre">EXPOSICIÓN FOTOGRÁFICA</p>
+        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
+      </div>
+      <div class="item">
+        <img alt="" src="assets/tienda/ceramica.png">
+        <p class="nombre">EXPOSICIÓN CERÁMICA TIWANAKU</p>
+        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,57 @@
+.fondo-negro {
+  --background: #000000;
+  color: white;
+}
+
+.titulo-canasta {
+  padding: 16px;
+  text-align: center;
+
+  h1 {
+    color: #DDE55C;
+    font-size: 24px;
+    margin: 0;
+  }
+}
+
+.lista-canasta {
+  margin-top: 12px;
+}
+
+.item-canasta {
+  --background: #1c1c1c;
+  margin: 8px;
+  border-radius: 12px;
+
+  ion-thumbnail img {
+    border-radius: 8px;
+  }
+
+  h2 {
+    color: white;
+    margin: 0;
+  }
+
+  p {
+    color: #DDE55C;
+    margin: 4px 0 0;
+  }
+}
+
+.agregar-tarjeta-btn {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.boton-agregar-container {
+  margin-top: 40px;
+  padding: 0 16px 32px 16px;
+}
+
+.boton-agregar {
+  --background: #DDE55C;
+  --color: #1b1b1f;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+}

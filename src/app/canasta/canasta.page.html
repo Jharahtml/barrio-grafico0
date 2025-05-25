@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lacomercio"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo-negro">
+
+  <div class="titulo-canasta">
+    <h1>Canasta</h1>
+  </div>
+
+  <ion-list class="lista-canasta">
+
+    <!-- Ítem 1 -->
+    <ion-item class="item-canasta">
+      <ion-thumbnail slot="start">
+        <img alt="" src="assets/tienda/bolso.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>BOLSO QHESPY</h2>
+        <p>Precio: 50</p>
+      </ion-label>
+    </ion-item>
+
+    <!-- Ítem 2 -->
+    <ion-item class="item-canasta">
+      <ion-thumbnail slot="start">
+        <img alt="" src="assets/tienda/polera.png" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>POLERA ALE</h2>
+        <p>Precio: 50</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <div class="boton-agregar-container">
+  <ion-button
+    expand="block"
+    class="boton-agregar"
+    routerLink="/formaspago">
+    Agregar Tarjeta
+  </ion-button>
+</div>
+
+</ion-content>

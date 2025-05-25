@@ -1,0 +1,103 @@
+.fondo-negro {
+  --background: #1b1b1f;
+  color: white;
+}
+
+.titulo-header {
+  color: #DDE55C;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.barra-progreso {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #9933ff, #ffff66);
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.puntos {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #DDE55C;
+}
+
+.puntos ion-icon {
+  margin-right: 8px;
+}
+
+.seccion {
+  margin-top: 10px;
+}
+
+.seccion-titulo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #DDE55C;
+  margin-bottom: 12px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.item {
+  background: #2c2c30;
+  padding: 8px;
+  border-radius: 10px;
+  width: calc(33.333% - 8px); // para que entren 3 por fila con margen
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.nombre {
+  font-size: 12px;
+  margin: 6px 0;
+  color: white;
+}
+
+.precio {
+  font-size: 14px;
+  background: #3e3e44;
+  border-radius: 8px;
+  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: white;
+}
+
+.titulo-la-comercio {
+  color: #DDE55C;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.canasta-icon {
+  font-size: 24px;
+  color: #DDE55C;
+  margin-right: 10px;
+}
