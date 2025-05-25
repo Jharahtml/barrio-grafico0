@@ -41,9 +41,11 @@
 
     <!-- Intercambio -->
     <h4 class="section-title">Intercambio disponible</h4>
-    <ion-card class="trade-card" *ngIf="amigo?.trade">
+    <ion-card class="trade-card" *ngIf="amigo?.trade?.length > 0">
       <ion-card-content class="compact-content">
-        <img alt="" [src]="amigo?.trade?.image" class="card-img-trade" />
+        <div *ngFor="let intercambio of amigo?.trade">
+          <img alt="Intercambio" [src]="intercambio.image || 'assets/img/default-trade.png'" class="card-img-trade" />
+        </div>
       </ion-card-content>
     </ion-card>
   </div>

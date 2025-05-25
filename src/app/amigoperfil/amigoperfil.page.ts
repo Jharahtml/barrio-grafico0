@@ -25,6 +25,7 @@ ngOnInit() {
       if (userData) {
         this.amigo = userData; 
         console.log('Datos del amigo cargados:', this.amigo);
+        console.log('URL de la imagen del intercambio:', this.amigo?.trade?.map((intercambio: any) => intercambio.image));
       } else {
         console.error('No se encontraron datos para este usuario.');
       }
