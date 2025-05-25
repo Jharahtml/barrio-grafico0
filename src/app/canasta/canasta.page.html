@@ -1,47 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-icon routerLink="/lacomercio" class="atraslogin" name="arrow-back">
-</ion-icon>
-</ion-header>
+<ion-content class="custom-background">
 
-<ion-content class="fondo-negro">
+  <!-- Flecha de retroceso -->
+  <ion-icon routerLink="/lacomercio" class="atraslogin" name="arrow-back"></ion-icon>
 
-  <div class="titulo-canasta">
-    <h1>Canasta</h1>
+  <div class="contenido">
+    <div class="titulo">Canasta</div>
+    <!-- Botón agregar tarjeta -->
+    <ion-button class="boton-agregar" routerLink="/formaspago">Agregar Tarjeta</ion-button>
+
+    <!-- Lista de productos -->
+    <div class="producto-card">
+      <img src="assets/tienda/bolso.png" alt="Bolso Qhespy" class="producto-img" />
+      <div class="producto-info">
+        <h2 class="producto-titulo">BOLSO QHESPY</h2>
+        <p class="producto-precio">Precio: 50</p>
+      </div>
+    </div>
+
+    <div class="producto-card">
+      <img src="assets/tienda/polera.png" alt="Polera Ale" class="producto-img" />
+      <div class="producto-info">
+        <h2 class="producto-titulo">POLERA ALE</h2>
+        <p class="producto-precio">Precio: 50</p>
+      </div>
+    </div>
   </div>
-
-  <ion-list class="lista-canasta">
-
-    <!-- Ítem 1 -->
-    <ion-item class="item-canasta">
-      <ion-thumbnail slot="start">
-        <img alt="" src="assets/tienda/bolso.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>BOLSO QHESPY</h2>
-        <p>Precio: 50</p>
-      </ion-label>
-    </ion-item>
-
-    <!-- Ítem 2 -->
-    <ion-item class="item-canasta">
-      <ion-thumbnail slot="start">
-        <img alt="" src="assets/tienda/polera.png" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>POLERA ALE</h2>
-        <p>Precio: 50</p>
-      </ion-label>
-    </ion-item>
-
-  </ion-list>
-
-  <div class="boton-agregar-container">
-  <ion-button
-    expand="block"
-    class="boton-agregar"
-    routerLink="/formaspago">
-    Agregar Tarjeta
-  </ion-button>
-</div>
 
 </ion-content>

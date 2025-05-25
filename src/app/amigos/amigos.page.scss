@@ -1,11 +1,11 @@
 .custom-background {
-  --background: #1c1c1c;
-  color: #f0f0f0;
-  position: relative; /* Necesario para posicionar la flecha */
+  --background: #1D1D20;
+  color: #fff;
+  position: relative;
 }
 
 .titulo {
-  color: #e6e632;
+  color: #DDE55C;
   font-size: 1.4em;
   font-weight: bold;
   text-align: center;
@@ -13,7 +13,7 @@
 
 .linea-decorativa {
   height: 4px;
-  background: linear-gradient(to right, #e6e632, #bb65ff);
+  background: linear-gradient(to right, #DDE55C, #AD74D6);
   margin: 10px 0 20px;
   border-radius: 4px;
 }
@@ -25,14 +25,14 @@
 }
 
 .custom-searchbar {
-  --background: #2e2e2e;
+  --background: #2B2B2C;
   --color: #fff;
   flex: 1;
 }
 
 .qr-icon {
   font-size: 24px;
-  color: #e6e632;
+  color: #DDE55C;
 }
 
 .lista-amigos {
@@ -40,7 +40,7 @@
 }
 
 .amigo-item {
-  background: #2a2a2a;
+  background: #2B2B2C;
   border-radius: 10px;
   margin-bottom: 10px;
   color: #fff;
@@ -48,13 +48,13 @@
 .amigo-item img{
   width: 50px;
   height: auto;
-  border: solid 2px #e6e632;
+  border: solid 2px #DDE55C;
 }
 
 
 .nombre {
   font-weight: bold;
-  color: #e6e632;
+  color: #DDE55C;
 }
 
 .id {
@@ -66,26 +66,27 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 340px;
-  border-top: 2px solid #e6e632;
+  border-top: 2px solid #DDE55C;
   padding-top: 10px;
 }
 
 .nav-btn {
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  font-size: 0.4em;
+  background: #2B2B2C;
+  color: #DDE55C;
+  font-size: 0.5em;
+  border-radius: 100%;
+  padding: 10px;
 }
 
 .nav-btn.activo {
-  background: #e6e632;
-  color: #000;
-  border-radius: 50%;
+  background: #DDE55C;
+  color: #2B2B2C;
+  border-radius: 100%;
   padding: 10px;
 }
 
 .atraslogin {
-  color: #f9f06b;
+  color: #DDE55C;
   font-size: 24px;
   position: absolute; /* Posición fija respecto al ion-content */
   top: 15px;
