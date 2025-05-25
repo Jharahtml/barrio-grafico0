@@ -1,29 +1,37 @@
-<ion-content [fullscreen]="true">
-<div *ngIf="cartaFavorita">
-  <h2>Carta Favorita</h2>
-  <div class="favorita-card">
-    <img [src]="cartaFavorita.image" alt="Imagen de la carta favorita">
-    <h3>{{ cartaFavorita.title }}</h3>
+<ion-content class="coleccion1-background">
+  <ion-icon name="arrow-back" routerLink="/" class="back-icon"></ion-icon>
+
+  <div class="coleccion1-content">
+
+    <h1 class="coleccion1-title">Colección</h1>
+
+    <!-- Imagen destacada con datos de Firebase -->
+    <div *ngIf="cartaFavorita">
+      <img [src]="cartaFavorita.image" alt="Carta favorita" class="main-card-img" />
+      <p class="main-card-name">{{ cartaFavorita.title }}</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <ion-button size="small" class="filter-btn todas" (click)="filterByType('all')">TODAS</ion-button>
+      <ion-button size="small" class="filter-btn shiny" (click)="filterByType('shiny')">SHINY</ion-button>
+      <ion-button size="small" class="filter-btn normales" (click)="filterByType('normal')">NORMALES</ion-button>
+      <ion-button size="small" class="filter-btn ofertar">OFERTAR</ion-button>
+    </div>
+
+    <!-- Galería dinámica de cartas -->
+    <div *ngIf="filteredCartas.length === 0">
+      <p>No hay cartas disponibles.</p>
+    </div>
+
+    <div class="gallery">
+      <img
+        *ngFor="let carta of filteredCartas"
+        [src]="carta.image"
+        alt="Carta"
+        (click)="abrirModal(carta)"
+      />
+    </div>
+
   </div>
-</div>
-
-
-<div *ngIf="cartas.length === 0">
-<p>No hay cartas disponibles.</p>
-</div>
-<ion-button (click)="filterByType('all')">Todos</ion-button>
-<ion-button (click)="filterByType('shiny')">Shiny</ion-button>
-<ion-button (click)="filterByType('normal')">Normal</ion-button>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="4" *ngFor="let carta of filteredCartas">
-        <div class="carta-container" (click)="abrirModal(carta)">
-          <img [src]="carta?.image" alt="carta">
-
-        </div>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>

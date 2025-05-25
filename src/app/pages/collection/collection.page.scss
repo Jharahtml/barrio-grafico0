@@ -1,0 +1,96 @@
+.coleccion1-background {
+  background-color: #111;
+  color: #DDE55C;
+}
+
+.back-icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  color: #DDE55C;
+  z-index: 10;
+}
+
+.coleccion1-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 16px 16px;
+}
+
+.coleccion1-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #DDE55C;
+}
+
+.main-card-img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.main-card-name {
+  color: #DDE55C;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #DDE55C;
+  border-radius: 10px;
+  padding: 2px 12px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap; /* evita que baje a otra línea */
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+  width: 100%;
+  overflow-x: auto; /* por si en móviles se pasa del ancho */
+}
+
+.filter-btn {
+  --border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 30px;
+  min-width: 70px;
+}
+
+.filter-btn.todas {
+  --background: #c996ec;
+  color: white;
+}
+
+.filter-btn.shiny,
+.filter-btn.normales {
+  --background: #111;
+  color: white;
+  border: none;
+}
+
+.filter-btn.ofertar {
+  --background: #DDE55C;
+  color: #111;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cartas por fila */
+  gap: 10px;
+  padding-bottom: 20px;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
