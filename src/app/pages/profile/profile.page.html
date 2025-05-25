@@ -1,7 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <!-- Combinamos los headers -->
-    <ion-icon slot="start" routerLink="/registro" class="atraslogin" name="arrow-back"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #DDE55C;" menu="m1"></ion-menu-button>
+    </ion-buttons>
     <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -41,14 +42,21 @@
       <ion-icon name="bar-chart-outline"></ion-icon>
       <span>HISTORIAL</span>
     </div>
-    <div class="icon-button">
-      <ion-icon name="people-outline"></ion-icon>
-      <span>AMIGOS</span> <!-- Corregí "AMIGODS" a "AMIGOS" -->
-    </div>
-    <div class="icon-button">
-      <ion-icon name="book-outline"></ion-icon>
+    
+    <ion-button fill="clear" class="icon-button" routerLink="/amigos">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+      <ion-icon name="people-outline" style="font-size: 24px;"></ion-icon>
+      <span>AMIGOS</span>
+      </div>
+    </ion-button>
+
+
+    <ion-button fill="clear" class="icon-button" routerLink="/collection">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+      <ion-icon name="book-outline" style="font-size: 24px;"></ion-icon>
       <span>COLECCIÓN</span>
-    </div>
+      </div>
+    </ion-button>
     <div class="icon-button bottom-icon">
       <ion-icon name="color-palette-outline"></ion-icon>
       <span>EDITAR</span>
@@ -58,5 +66,4 @@
       <span>AJUSTES</span>
     </div>
   </div>
-  <app-menu-profile></app-menu-profile>
 </ion-content>

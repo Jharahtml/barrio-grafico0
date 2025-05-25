@@ -89,6 +89,10 @@ const routes: Routes = [
   {
     path: 'canasta',
     loadChildren: () => import('./canasta/canasta.module').then( m => m.CanastaPageModule)
+  },
+  {
+    path: 'eventos',
+    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
   }
 
 ];
