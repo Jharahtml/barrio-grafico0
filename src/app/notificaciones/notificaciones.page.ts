@@ -9,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class NotificacionesPage implements OnInit {
   notificaciones = [
     {
-      mensaje: 'Tu reserva en The Westin ha sido confirmada.',
+      mensaje: 'Te han invitado a una misión grupal',
     },
     {
-      mensaje: 'Disfruta de un 20% en tu próxima estadía.',
+      mensaje: 'lobe68 ha publicado un intercambio',
     }
   ];
 
