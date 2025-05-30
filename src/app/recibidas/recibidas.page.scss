@@ -1,10 +1,11 @@
 .custom-background {
-  --background: #1c1c1c;
-  color: #f0f0f0;
+  --background: #1D1D20;
+  color: #fff;
+  position: relative;
 }
 
 .titulo {
-  color: #e6e632;
+  color: #DDE55C;
   font-size: 1.4em;
   font-weight: bold;
   text-align: center;
@@ -12,7 +13,7 @@
 
 .linea-decorativa {
   height: 4px;
-  background: linear-gradient(to right, #e6e632, #bb65ff);
+  background: linear-gradient(to right, #DDE55C, #AD74D6);
   margin: 10px 0 20px;
   border-radius: 4px;
 }
@@ -24,14 +25,14 @@
 }
 
 .custom-searchbar {
-  --background: #2e2e2e;
+  --background: #2B2B2C;
   --color: #fff;
   flex: 1;
 }
 
 .qr-icon {
   font-size: 24px;
-  color: #e6e632;
+  color: #DDE55C;
 }
 
 .lista-amigos {
@@ -39,7 +40,7 @@
 }
 
 .amigo-item {
-  background: #2a2a2a;
+  background: #2B2B2C;
   border-radius: 10px;
   margin-bottom: 10px;
   color: #fff;
@@ -51,7 +52,7 @@
 
 .nombre {
   font-weight: bold;
-  color: #e6e632;
+  color: #DDE55C;
 }
 
 .id {
@@ -63,7 +64,7 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 415px;
-  border-top: 2px solid #e6e632;
+  border-top: 2px solid #DDE55C;
   padding-top: 10px;
 }
 
@@ -75,13 +76,13 @@
 }
 
 .nav-btn.activo {
-  background: #e6e632;
-  color: #000;
+  background: #DDE55C;
+  color: #2B2B2C;
   border-radius: 50%;
   padding: 10px;
 }
 .atraslogin {
-  color: #f9f06b;
+  color: #DDE55C;
   font-size: 24px;
   position: absolute;
   top: 15px;
