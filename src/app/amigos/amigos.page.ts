@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-amigos',
   templateUrl: './amigos.page.html',
@@ -12,7 +14,8 @@ export class AmigosPage implements OnInit {
   resultadoBusqueda: any[] = [];
   constructor(
     public db: DatabaseService,
-    public auth: AuthService
+    public auth: AuthService,
+    public router: Router
   ) { 
     
   }
@@ -36,8 +39,12 @@ ngOnInit() {
     } else {
       console.error('No hay usuario autenticado.');
     }
-  });
+  }); 
 }
+verAmigo(amigoId: string) {
+    this.router.navigate(['/amigoperfil', amigoId]); 
+  }
+
 buscarAmigo(name: string) {
   if (!name.trim()) {
     this.resultadoBusqueda = [];

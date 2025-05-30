@@ -1,0 +1,41 @@
+.item {
+  background: #2c2c30;
+  padding: 8px;
+  border-radius: 10px;
+  //width: calc(33.333% - 8px); // para que entren 3 por fila con margen
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+}
+
+.item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  height: auto;
+  border-radius: 8px;
+}
+
+.nombre {
+  font-size: 12px;
+  margin: 6px 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.precio {
+  font-size: 14px;
+  background: #3e3e44;
+  border-radius: 8px;
+  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: white;
+}
+app-card {
+  width: 360px;
+  height: 100%;
+  display: flex;
+}
+

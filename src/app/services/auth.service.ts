@@ -79,7 +79,7 @@ export class AuthService {
     return runInInjectionContext(this.injector, () => {
       this.db.getDocumentById('users', uid).subscribe(
         (res: any) => {
-          console.log('perfil desde firebase', res);
+          console.log('Perfil desde firebase', res);
           localStorage.setItem('profile', JSON.stringify(res));
           this.profile = res;
         },
