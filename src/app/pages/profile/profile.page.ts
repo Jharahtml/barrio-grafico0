@@ -99,4 +99,23 @@ export class ProfilePage {
       console.error('Error al cargar datos:', error);
     }
   }
+  updateProfile() {
+  const uid = this.auth.profile?.id;
+  if (!uid) return;
+
+  const updatedData = {
+      name: this.profile.name,
+      avatar: this.profile.avatar,
+    };
+  try{
+    this.db.updateFireStoreDocument('users', uid, updatedData);
+   
+  }
+
+  catch (error) {
+      console.error('Error al actualizar perfil:', error);
+    }
+
+}
+
 }
