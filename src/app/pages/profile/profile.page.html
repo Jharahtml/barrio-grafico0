@@ -35,25 +35,6 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <!-- editar -->
-  <ion-card class="editar">
-  <ion-card-header>
-    <ion-card-title>Editar Perfil</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input [(ngModel)]="profile.name"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Avatar URL</ion-label>
-      <ion-input [(ngModel)]="profile.avatar"></ion-input>
-    </ion-item>
-
-    <ion-button expand="full" (click)="updateProfile()">Guardar Cambios</ion-button>
-  </ion-card-content>
-</ion-card>
 
   <!-- Menú inferior (del segundo código) -->
   <div class="icon-grid">
