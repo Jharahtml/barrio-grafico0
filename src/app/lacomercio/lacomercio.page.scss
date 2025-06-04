@@ -40,12 +40,6 @@
   margin-bottom: 12px;
 }
 
-/* .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-} */
 
 .item {
   background: #2c2c30;
@@ -138,3 +132,38 @@
 }
 
 
+.tarjeta-puntos {
+  background: #2c2c30;
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-puntos:hover {
+  transform: scale(1.03);
+}
+
+.tarjeta-puntos img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.tarjeta-puntos .nombre {
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.tarjeta-puntos .precio {
+  font-size: 14px;
+  background: #3e3e44;
+  border-radius: 8px;
+  padding: 2px 8px;
+  display: inline-block;
+  color: white;
+}

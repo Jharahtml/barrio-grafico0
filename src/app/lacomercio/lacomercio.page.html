@@ -14,86 +14,95 @@
   <div class="barra-progreso"></div>
 
   <div class="top-bar">
-  <div class="puntos">
-    <ion-icon name="logo-usd"></ion-icon>
-    <span>{{puntos}}</span>
-  </div>
-  <ion-icon
-    name="basket"
-    routerLink="/canasta"
-    class="canasta-icon">
-  </ion-icon>
+    <div class="puntos">
+      <ion-icon name="logo-usd"></ion-icon>
+      <span>{{puntos}}</span>
+    </div>
+    <ion-icon
+      name="basket"
+      routerLink="/canasta"
+      class="canasta-icon">
+    </ion-icon>
   </div>
 
-
+  <!-- SECCIÓN PRODUCTOS -->
   <div class="seccion">
     <h2 class="seccion-titulo">Productos</h2>
     <ion-grid>
       <ion-row>
-         <ion-col size="4" *ngFor="let producto of merch">
-      <app-card [producto]="producto" (click)="abrirModal(producto)"></app-card>
-    </ion-col>
+        <ion-col size="4" *ngFor="let producto of merch">
+          <app-card [producto]="producto" (click)="abrirModal(producto)"></app-card>
+        </ion-col>
       </ion-row>
     </ion-grid>
-    </div>
+  </div>
 
-    <div class="seccion">
+  <!-- SECCIÓN PASES -->
+  <div class="seccion">
     <h2 class="seccion-titulo">Pases</h2>
     <ion-grid>
       <ion-row>
-         <ion-col size="4" *ngFor="let producto of tickets">
-      <app-card [producto]="producto" (click)="abrirModal(producto)"></app-card>
-    </ion-col>
-    </ion-row>
+        <ion-col size="4" *ngFor="let producto of tickets">
+          <app-card [producto]="producto" (click)="abrirModal(producto)"></app-card>
+        </ion-col>
+      </ion-row>
     </ion-grid>
-    </div>
-  <!-- Modal -->
-<ng-container *ngIf="mostrarModal">
-  <div class="overlay" (click)="cerrarModal()"></div>
-  <div class="modal-content">
-      <h2 *ngIf="productoSeleccionado"> {{ productoSeleccionado?.name }}</h2>
-    <img *ngIf="productoSeleccionado" [src]="productoSeleccionado?.image" alt="{{ productoSeleccionado?.nombre }}">
-    <p>Precio: {{ productoSeleccionado?.price }} puntos</p>
-
-    <!-- Si el producto es de tipo "merch", solo muestra descripción -->
-    <ng-container *ngIf="productoSeleccionado?.type === 'merch'">
-      <p>Descripción: {{ productoSeleccionado?.description }}</p>
-    </ng-container>
-    
-    <!-- Si el producto es un "ticket", muestra lugar, fecha y exposición -->
-    <ng-container *ngIf="productoSeleccionado?.type === 'ticket'">
-      <p>Lugar: {{ productoSeleccionado?.address }}</p>
-      <p>Fecha: {{ productoSeleccionado?.date }}</p>
-      <p *ngIf="productoSeleccionado?.exhibition">Exposición: {{ productoSeleccionado?.exhibition }}</p>
-    </ng-container>
-
-    <button>Comprar</button>
-    <button (click)="cerrarModal()">Cancelar</button>
   </div>
-</ng-container>
-</ion-content>
-
-  <!--<div class="seccion">
-    <h2 class="seccion-titulo">Pases</h2>
-     <ion-col size="12" size-md="6" *ngFor="let producto of tickets">
-        <app-card [producto]="producto"></app-card>
+  
+  <!-- ✅ SECCIÓN PUNTOS (CORREGIDA) -->
+<div class="seccion">
+  <h2 class="seccion-titulo">Puntos</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <div class="tarjeta-puntos">
+          <img src="assets/tarjetitauvu.png" alt="Tarjeta 1000">
+          <div class="nombre">$ 1000</div>
+          <div class="precio">5$</div>
+        </div>
       </ion-col>
-     <div class="grid">
-      <div class="item">
-        <img alt="" src="assets/tienda/mascara.png">
-        <p class="nombre">EXPOSICIÓN DE MÁSCARAS</p>
-        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
-      </div>
-      <div class="item">
-        <img alt="" src="assets/tienda/fotografica.png">
-        <p class="nombre">EXPOSICIÓN FOTOGRÁFICA</p>
-        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
-      </div>
-      <div class="item">
-        <img alt="" src="assets/tienda/ceramica.png">
-        <p class="nombre">EXPOSICIÓN CERÁMICA TIWANAKU</p>
-        <div class="precio"><ion-icon name="logo-usd"></ion-icon> 50</div>
-      </div>
-    </div> 
-  </div>-->
+      <ion-col size="4">
+        <div class="tarjeta-puntos">
+          <img src="assets/tarjetitauvu.png" alt="Tarjeta 2500">
+          <div class="nombre">$ 2500</div>
+          <div class="precio">10$</div>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="tarjeta-puntos">
+          <img src="assets/tarjetitauvu.png" alt="Tarjeta 5000">
+          <div class="nombre">$ 5000</div>
+          <div class="precio">15$</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+
+  <!-- MODAL -->
+  <ng-container *ngIf="mostrarModal">
+    <div class="overlay" (click)="cerrarModal()"></div>
+    <div class="modal-content">
+      <h2 *ngIf="productoSeleccionado"> {{ productoSeleccionado?.name }}</h2>
+      <img *ngIf="productoSeleccionado" [src]="productoSeleccionado?.image" alt="{{ productoSeleccionado?.nombre }}">
+      <p>Precio: {{ productoSeleccionado?.price }} puntos</p>
+
+      <!-- Si el producto es de tipo "merch", solo muestra descripción -->
+      <ng-container *ngIf="productoSeleccionado?.type === 'merch'">
+        <p>Descripción: {{ productoSeleccionado?.description }}</p>
+      </ng-container>
+
+      <!-- Si el producto es un "ticket", muestra lugar, fecha y exposición -->
+      <ng-container *ngIf="productoSeleccionado?.type === 'ticket'">
+        <p>Lugar: {{ productoSeleccionado?.address }}</p>
+        <p>Fecha: {{ productoSeleccionado?.date }}</p>
+        <p *ngIf="productoSeleccionado?.exhibition">Exposición: {{ productoSeleccionado?.exhibition }}</p>
+      </ng-container>
+
+      <button>Comprar</button>
+      <button (click)="cerrarModal()">Cancelar</button>
+    </div>
+  </ng-container>
+</ion-content>
 
