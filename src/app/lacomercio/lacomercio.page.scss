@@ -167,3 +167,11 @@
   display: inline-block;
   color: white;
 }
+ion-button.cancelar {
+  --background: #AD74D6;
+  --color: #2c2c30 !important;
+}
+ion-button.comprar {
+  --background: #DDE55C;
+  --color: #2c2c30 !important;
+}
