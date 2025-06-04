@@ -101,6 +101,10 @@ const routes: Routes = [
   {
     path: 'editar1',
     loadChildren: () => import('./editar1/editar1.module').then( m => m.Editar1PageModule)
+  },
+  {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
   }
 
 ];

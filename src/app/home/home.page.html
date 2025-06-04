@@ -11,8 +11,9 @@
 
 <ion-content [fullscreen]="true">
   <div id="map" style="height: 100%;" ></div>
-  <ion-button id="map-button" shape="round">
+  <ion-button id="map-button" shape="round" (click)="abrirCamara()">
   <ion-icon class="iconoscan" name="scan-outline"></ion-icon>
   <div class="button-label">Escanear</div>
-  </ion-button>
+</ion-button>
+
 </ion-content>
