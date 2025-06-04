@@ -93,6 +93,14 @@ const routes: Routes = [
   {
     path: 'eventos',
     loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
+  },
+  {
+    path: 'editar',
+    loadChildren: () => import('./editar/editar.module').then( m => m.EditarPageModule)
+  },
+  {
+    path: 'editar1',
+    loadChildren: () => import('./editar1/editar1.module').then( m => m.Editar1PageModule)
   }
 
 ];

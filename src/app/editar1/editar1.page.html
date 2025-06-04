@@ -1,0 +1,17 @@
+<ion-content class="editar1-page">
+  <ion-icon routerLink="/editar" class="back-button" name="arrow-back-outline"></ion-icon>
+
+  <div class="editar-container">
+    <div class="title">¡Elige tu jeta!</div>
+    <div class="subtitle">Selecciona un nuevo avatar</div>
+
+    <div class="fotos-grid">
+      <img alt="" *ngFor="let avatar of avatars"
+           [src]="avatar"
+           (click)="selectAvatar(avatar)"
+           [class.selected]="avatar === avatarUrl" />
+    </div>
+
+    <ion-button expand="block" class="guardar-btn" (click)="updateAvatar()">Seleccionar</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,70 @@
+.editar1-page {
+  --background: #1D1D20;
+  color: white;
+
+  .back-button {
+    color: #DDE55C;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+  }
+
+  .editar-container {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+
+    .title {
+      color: #DDE55C;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #AD74D6;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .fotos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      justify-items: center;
+      margin-bottom: 20px;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #DDE55C;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        &.selected {
+          border: 3px solid #AD74D6;
+          transform: scale(1.1);
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .guardar-btn {
+      --background: #DDE55C;
+      color: #1D1D20;
+      font-weight: bold;
+      width: 100%;
+      max-width: 350px;
+      border-radius: 12px;
+    }
+  }
+}

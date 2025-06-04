@@ -1,0 +1,23 @@
+<ion-content class="ion-padding fondo">
+  <ion-icon name="arrow-back-outline" routerLink="/profile" class="back-icon"></ion-icon>
+
+  <div class="editar-container">
+    <div class="title">Personalizar</div>
+
+    <div class="profile-section">
+      <ion-avatar class="avatar">
+        <img alt="" [src]="profile?.avatar || 'assets/fotoperfil.jpg'" />
+        <ion-icon name="color-palette-outline" class="edit-icon" routerLink="/editar1"></ion-icon>
+      </ion-avatar>
+    </div>
+
+    <div class="form-section">
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input [(ngModel)]="profile.name" class="input-white"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" class="guardar-btn" (click)="updateProfile()">Guardar cambios</ion-button>
+    </div>
+  </div>
+</ion-content>

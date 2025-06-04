@@ -1,0 +1,81 @@
+.fondo {
+  --background: #1D1D20;
+  color: white;
+}
+
+.back-icon {
+  color: #DDE55C;
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.editar-container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+
+  .title {
+    color: #DDE55C;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border: 4px solid #DDE55C;
+      border-radius: 50%;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .edit-icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #DDE55C;
+        padding: 6px;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #1D1D20;
+      }
+    }
+  }
+
+  .form-section {
+    width: 100%;
+    max-width: 350px;
+
+    ion-item {
+      --background: #2B2B2C;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .input-white {
+      color: white;
+    }
+
+    .guardar-btn {
+      --background: #DDE55C;
+      color: #1D1D20;
+      font-weight: bold;
+      border-radius: 30px;
+      width: 100%;
+    }
+  }
+}
