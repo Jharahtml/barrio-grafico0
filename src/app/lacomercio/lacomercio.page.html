@@ -49,7 +49,7 @@
     </ion-grid>
   </div>
   
-  <!-- ✅ SECCIÓN PUNTOS (CORREGIDA) -->
+  <!--  SECCIÓN PUNTOS (CORREGIDA) -->
 <div class="seccion">
   <h2 class="seccion-titulo">Puntos</h2>
   <ion-grid>
@@ -100,8 +100,9 @@
         <p *ngIf="productoSeleccionado?.exhibition">Exposición: {{ productoSeleccionado?.exhibition }}</p>
       </ng-container>
 
-      <button>Comprar</button>
-      <button (click)="cerrarModal()">Cancelar</button>
+      <ion-button class="cancelar" (click)="cerrarModal()">Cancelar</ion-button>
+      <ion-button class="comprar">Comprar</ion-button>
+      
     </div>
   </ng-container>
 </ion-content>
