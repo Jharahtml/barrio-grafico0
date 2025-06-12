@@ -35,12 +35,12 @@ export class LacomercioPage implements OnInit {
   this.db.fetchFirestoreCollection('comercio').subscribe({
     next: (res: any[]) => {
       this.productos = res;
-      console.log('Productos de Firestore:', res);
+      /* console.log('Productos de Firestore:', res); */
 
     this.merch = res.filter(producto => producto.type === 'merch');
     this.tickets = res.filter(producto => producto.type === 'ticket')
 
-      console.log('Productos en merch:', this.merch);
+      /* console.log('Productos en merch:', this.merch); */
 
     },
     error: (err) => {

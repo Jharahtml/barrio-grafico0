@@ -8,52 +8,17 @@
     <div class="linea-decorativa"></div>
 
     <!-- Lista de eventos -->
-    <div class="evento-card">
-      <img src="assets/eventos/carnaval.png" alt="Carnaval" class="evento-img" />
+    <div *ngFor="let evento of eventos" class="evento-card">
+      <img src="{{evento.image}}" alt="Evento" class="evento-img" />
       <div class="evento-info">
-        <h2 class="evento-titulo">Carnaval</h2>
-        <p class="evento-descripcion">Fiesta llena de música, danzas</p>
+        <h2 class="evento-titulo">{{evento.name}}</h2>
+        <p class="evento-descripcion">{{evento.description}}</p>
         <p class="evento-tiempo">
-          Tiempo restante: 1D-11H-30S
+          Tiempo restante: {{evento.date}}
           <ion-icon name="time-outline"></ion-icon>
         </p>
       </div>
     </div>
+    
 
-    <div class="evento-card">
-      <img src="assets/eventos/museos.png" alt="Larga Noche de Museos" class="evento-img" />
-      <div class="evento-info">
-        <h2 class="evento-titulo">Larga Noche de Museos</h2>
-        <p class="evento-descripcion">Noche para recorrer museos</p>
-        <p class="evento-tiempo">
-          Tiempo restante: 1D-11H-30S
-          <ion-icon name="time-outline"></ion-icon>
-        </p>
-      </div>
-    </div>
 
-    <div class="evento-card">
-      <img src="assets/eventos/alasita.png" alt="Alasitas" class="evento-img" />
-      <div class="evento-info">
-        <h2 class="evento-titulo">Alasitas</h2>
-        <p class="evento-descripcion">Feria de miniaturas, Ekeko</p>
-        <p class="evento-tiempo">
-          Tiempo restante: 1D-11H-30S
-          <ion-icon name="time-outline"></ion-icon>
-        </p>
-      </div>
-    </div>
-
-    <div class="evento-card">
-      <img src="assets/eventos/santos.png" alt="Todos Santos" class="evento-img" />
-      <div class="evento-info">
-        <h2 class="evento-titulo">Todos Santos</h2>
-        <p class="evento-descripcion">Almas de los difuntos regresan</p>
-        <p class="evento-tiempo">
-          Tiempo restante: 1D-11H-30S
-          <ion-icon name="time-outline"></ion-icon>
-        </p>
-      </div>
-    </div>
-  </div> <!-- 👈 CIERRE del div.contenido que faltaba -->
-</ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from '../services/database.service';
 
 @Component({
   selector: 'app-eventos',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class EventosPage implements OnInit {
-
-  constructor() { }
+  eventos: any[] = [];
+  constructor(
+    public db: DatabaseService
+  ) { }
 
   ngOnInit() {
+  this.db.fetchFirestoreCollection('eventos').subscribe((res: any[]) => {
+  this.eventos = res;
+});
   }
-
+  
 }
