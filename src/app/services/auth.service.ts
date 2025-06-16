@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { DatabaseService } from './database.service';
 import { ToastController } from '@ionic/angular';
+import { Auth, getAuth} from '@angular/fire/auth'; 
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,10 @@ export class AuthService {
     public toastCtrl: ToastController,
     public db: DatabaseService,
     public router: Router,
-    private injector: Injector
+    private injector: Injector,
+    private auth: Auth 
   ) {
+    this.auth = getAuth();
     const user = localStorage.getItem('profile');
     if(user){
       this.profile = JSON.parse(user);
@@ -118,8 +121,11 @@ export class AuthService {
       }
     });
   }
-
-
+  /* getCurrentUserId(): string | null {
+    const user: User | null = this.auth.currentUser;
+    return user ? user.uid : null;
+  } */
+ 
 /*   verifyIsLogued() {
     let user = localStorage.getItem('user');
     this.isLogued = user ? true : false;

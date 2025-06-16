@@ -42,9 +42,14 @@
   --ion-text-color: var(--ion-color-tertiary); /* Set your desired text color */
 
   /* Font family */
-  --ion-font-family: 'Arial', sans-serif; /* Replace with your desired font */
+  --ion-font-family: 'Texto', sans-serif; /* Replace with your desired font */
   
 }
+@font-face {
+  font-family: 'Texto';
+  src: url(./assets/fonts/IBMPlexSans-Regular.ttf);
+}
+
 /* Personaliza el color del texto en los ion-input */
 ion-input {
   --color: var(--ion-color-primary) !important;

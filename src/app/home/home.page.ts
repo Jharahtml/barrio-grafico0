@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { DatabaseService } from '../services/database.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { AuthService } from '../services/auth.service';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +12,14 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
   standalone: false,
 })
 export class HomePage implements OnInit {
-
+  
   map: any;
   items: any;
+  currentPosition: any;
 
   constructor(
-    public db: DatabaseService
+    public db: DatabaseService,
+    public authService: AuthService
   ){
     this.db.fetchFirestoreCollection('artspots')
     .subscribe((data: any) => {
@@ -23,29 +27,41 @@ export class HomePage implements OnInit {
         this.items = data;
         console.log("Datos cargados correctamente:", this.items);
         this.loadMap();
+        this.getCurrentLocation();
       }
       else{
         console.error("No se encontraron datos en Firestore.");
       }
     });
+    
   }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit(): void {
+   ngAfterViewInit(): void {
     setTimeout(() => {
       if (this.map) {
         this.map.invalidateSize();
       }
     }, 500);
-  }
+  } 
 
   loadMap() {
+    if (!document.getElementById('map')) {
+    console.error(" Elemento del mapa no encontrado en el DOM.");
+    return;
+  }
     this.map = L.map('map').setView([-16.5, -68.15], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(this.map);
+
+    setTimeout(() => {
+      if (this.map) {
+        this.map.invalidateSize();
+      }
+    }, 500);
 
     console.log("Datos obtenidos de Firestore:", this.items);
     if (!this.items || this.items.length === 0) {
@@ -54,7 +70,7 @@ export class HomePage implements OnInit {
     }  
 
     this.items.forEach((element: any) => {
-      console.log(`Ubicación de ${element.name}: Lat ${element.latitude}, Lng ${element.longitude}`);
+      /* console.log(`Ubicación de ${element.name}: Lat ${element.latitude}, Lng ${element.longitude}`); */
 
       L.marker([element.latitude, element.longitude], {
         icon: L.icon({
@@ -66,9 +82,65 @@ export class HomePage implements OnInit {
       }).addTo(this.map)
       .bindPopup(`<b>${element.name}</b>`);
     });
+     setTimeout(() => {
+    this.map.invalidateSize();
+  }, 500);
+  }
+  
+  async getCurrentLocation() {
+    try {
+     
+      if ((window as any).Capacitor && (window as any).Capacitor.isNativePlatform()) {
+        const permission = await Geolocation.requestPermissions();
+        if (permission.location === 'denied') {
+          console.log('permiso denegado')
+          return;
+        }
+        const position = await Geolocation.getCurrentPosition();
+        const { latitude, longitude } = position.coords;
+        console.log('Ubicación actual:', latitude, longitude);
+        this.marcarUbicacion(latitude, longitude);
+      } else {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            console.log('Ubicación actual (web):', latitude, longitude);
+            this.marcarUbicacion(latitude, longitude);
+          },
+          (error) => {
+            console.error('Error al obtener ubicación (web):', error);
+          });
+      }
+    } catch (error) {
+      console.error('Error general al obtener ubicación:', error);
+    }
   }
 
-  // ✅ MÉTODO NUEVO: abrir cámara al presionar botón
+  marcarUbicacion(lat: number, lng: number) {
+    if (!this.map) {
+    console.error("Mapa no inicializado. Asegúrate de llamar a loadMap() antes.");
+    return;
+  }
+    this.map.setView([lat, lng], 15);
+    L.marker([lat, lng], {
+      icon: L.icon({
+        iconUrl: 'assets/icon/spot.svg',
+        iconSize: [30, 30],
+        iconAnchor: [15, 30],
+        popupAnchor: [0, -30]
+      })
+    }).addTo(this.map).bindPopup('Estás aquí').openPopup();
+    L.circle([lat, lng], {
+      radius: 100,
+      color: '#AD74D6',
+      fillColor: '#30f',
+      fillOpacity: 0.2
+    }).addTo(this.map);
+  }
+
+ 
+
+  //Abre la cámara al presionar botón
   async abrirCamara() {
     try {
       const image = await Camera.getPhoto({
@@ -87,4 +159,5 @@ export class HomePage implements OnInit {
     }
   }
 
+  
 }

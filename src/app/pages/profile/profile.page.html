@@ -27,10 +27,10 @@
       <div class="card-horizontal">
         <img alt="" [src]="profile?.cartaFavorita?.image || 'assets/cards/microBless.png'" class="card-img" />
         <div class="card-info">
-          <p><strong>Artista:</strong> {{ profile?.cartaFavorita?.artist || 'BLESS' }}</p>
-          <p><strong>Técnica:</strong> {{ profile?.cartaFavorita?.technique || 'Graffiti' }}</p>
-          <p><strong>Rareza:</strong> {{ profile?.cartaFavorita?.rarity || 'Shiny' }}</p>
-          <p><strong>Ubicación:</strong> {{ profile?.cartaFavorita?.address || 'Plaza Avaroa' }}</p>
+          <p><strong>Artista:</strong> {{ profile?.cartaFavorita?.artist || 'Sin registro' }}</p>
+          <p><strong>Técnica:</strong> {{ profile?.cartaFavorita?.technique || 'Sin registro' }}</p>
+          <p><strong>Rareza:</strong> {{ profile?.cartaFavorita?.type || 'Sin registro' }}</p>
+          <p><strong>Ubicación:</strong> {{ profile?.cartaFavorita?.address || 'Sin registro' }}</p>
         </div>
       </div>
     </ion-card-content>
