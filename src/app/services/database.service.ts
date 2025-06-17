@@ -2,6 +2,7 @@ import { Injectable, Injector, runInInjectionContext } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore, Query } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { arrayUnion } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class DatabaseService {
     public http: HttpClient,
     public firestore: AngularFirestore,
     private injector: Injector,
-    private afs: AngularFirestore
+    //private afs: AngularFirestore
   ) { }
 
   // Lee un archivo json en la carpeta /assets/db/ NOMBRE
@@ -40,7 +41,9 @@ export class DatabaseService {
       return this.firestore.collection(collection).doc(uid).update(data);
     });
   }
-
+  get arrayUnion() {
+    return arrayUnion;
+  }
   // Elimina un documento o registro
   deleteFireStoreDocument(collection: string, id: string): Promise<void> {
     return runInInjectionContext(this.injector, () => {
@@ -107,18 +110,31 @@ export class DatabaseService {
   }
 //Obtener las cartas de un usuario específico
 
-getCartas(userId: string): Observable<any[]> {
+getCartas(uid: string): Observable<any[]> {
   return runInInjectionContext(this.injector, () => {
-    return this.firestore.collection(`users/${userId}/cartas`).valueChanges({ idField: 'id' });
+    return this.firestore.collection(`users/${uid}/cartas`).valueChanges({ idField: 'id' });
   });
-
-}  
+}
+  
 //Subcolección de cartas
 getSubcollection<T>(collectionName: string, docId: string, subcollectionName: string) {
-  return this.afs.collection(collectionName)
+  return this.firestore.collection(collectionName)
     .doc(docId)
     .collection<T>(subcollectionName)
     .valueChanges({ idField: 'id' });
 }
+  
+addToSubcollection(path: string, data: any) {
+  return runInInjectionContext(this.injector, () => {
+    return this.firestore.collection(path).add(data);
+  });
+}
 
+/* async findDocumentInSubcollection(path: string, field: string, value: any): Promise<any | null> {
+    const snapshot = await firstValueFrom(
+      this.afs.collection(path, ref => ref.where(field, '==', value)).get()
+    );
+
+    return snapshot.empty ? null : snapshot.docs[0].data();
+  } */
 }

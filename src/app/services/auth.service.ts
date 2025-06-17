@@ -121,6 +121,9 @@ export class AuthService {
       }
     });
   }
+  getUser() {
+  return this.afAuth.authState;
+}
   /* getCurrentUserId(): string | null {
     const user: User | null = this.auth.currentUser;
     return user ? user.uid : null;
