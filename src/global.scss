@@ -57,3 +57,8 @@ ion-input {
 ion-button {
   --color: #fff !important; // Reemplaza #ff5722 por el color que desees
 }
+body.scanner-active {
+   --background: transparent;
+   background: transparent;
+   --ion-background-color: transparent;
+}

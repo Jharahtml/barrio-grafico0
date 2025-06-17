@@ -9,10 +9,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="!qr.scan">
+  <div>
+    <h2>RESULTADO: <a [href]="qr.scanResult" target="_blank" style="color: blue; font-weight: bold;">{{qr.scanResult}}</a></h2>
+    <h2>{{qr.scanResult}}</h2>
+  </div> <!-- extra -->
   <div id="map" style="height: 100%;" ></div>
-  <ion-button id="map-button" shape="round" (click)="abrirCamara()">
-  <ion-icon class="iconoscan" name="scan-outline"></ion-icon>
+  <ion-button id="map-button" shape="round" (click)="Scan()">
+  <ion-icon class="iconoscan" name="scan-outline" ></ion-icon>
   <div class="button-label">Escanear</div>
 </ion-button>
 

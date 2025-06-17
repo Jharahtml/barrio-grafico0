@@ -4,6 +4,7 @@ import { DatabaseService } from '../services/database.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { AuthService } from '../services/auth.service';
 import { Geolocation } from '@capacitor/geolocation';
+import { QrService } from '../services/qr.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomePage implements OnInit {
 
   constructor(
     public db: DatabaseService,
-    public authService: AuthService
+    public authService: AuthService,
+    public qr: QrService
   ){
     this.db.fetchFirestoreCollection('artspots')
     .subscribe((data: any) => {
@@ -46,7 +48,9 @@ export class HomePage implements OnInit {
       }
     }, 500);
   } 
-
+  Scan() {
+    this.qr.StartScan()
+  }
   loadMap() {
     if (!document.getElementById('map')) {
     console.error(" Elemento del mapa no encontrado en el DOM.");
