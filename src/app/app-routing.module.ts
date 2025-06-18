@@ -113,6 +113,22 @@ const routes: Routes = [
   {
     path: 'histradeos',
     loadChildren: () => import('./histradeos/histradeos.module').then( m => m.HistradeosPageModule)
+  },
+  {
+    path: 'ajustes',
+    loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
+  },
+  {
+    path: 'acuenta',
+    loadChildren: () => import('./acuenta/acuenta.module').then( m => m.AcuentaPageModule)
+  },
+  {
+    path: 'agenerales',
+    loadChildren: () => import('./agenerales/agenerales.module').then( m => m.AgeneralesPageModule)
+  },
+  {
+    path: 'ainformacion',
+    loadChildren: () => import('./ainformacion/ainformacion.module').then( m => m.AinformacionPageModule)
   }
 
 

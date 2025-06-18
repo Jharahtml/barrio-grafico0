@@ -1,0 +1,61 @@
+<ion-content class="ajustes-bg">
+
+  <!-- Flecha de atrás -->
+  <ion-icon name="arrow-back" class="back-icon" routerLink="/profile"></ion-icon>
+
+  <!-- Título -->
+  <h1 class="ajustes-title">Ajustes</h1>
+
+  <!-- Controles de música y sonido -->
+  <div class="ajustes-section">
+    <div class="control-item">
+      <span>Música</span>
+      <ion-range class="ajustes-range" color="dark"></ion-range>
+    </div>
+    <div class="control-item">
+      <span>Sonido</span>
+      <ion-range class="ajustes-range" color="dark"></ion-range>
+    </div>
+    <div class="control-item">
+      <span>Vibración</span>
+      <ion-toggle color="secondary"></ion-toggle>
+    </div>
+    <div class="control-item">
+      <span>Háptica</span>
+      <ion-toggle color="secondary"></ion-toggle>
+    </div>
+  </div>
+
+  <!-- Navegación -->
+  <div class="ajustes-section">
+    <div class="nav-item" routerLink="/acuenta">
+      <span>Cuenta</span>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div class="nav-item" routerLink="/agenerales">
+      <span>Generales</span>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div class="nav-item" routerLink="/notificaciones">
+      <span>Notificaciones</span>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+
+  <!-- Información -->
+  <div class="ajustes-section">
+    <div class="nav-item" routerLink="/ainformacion">
+      <span>Información</span>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div class="nav-item">
+      <span>Versión</span>
+      <span>0.000.0</span>
+    </div>
+  </div>
+  <!-- Botón cerrar sesión -->
+  <div class="btn-container">
+    <ion-button class="logout-btn">Cerrar sesión</ion-button>
+  </div>
+
+</ion-content>

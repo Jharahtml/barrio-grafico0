@@ -1,0 +1,63 @@
+.ajustes-bg {
+  --background: #1D1D20;
+  color: #DDE55C;
+}
+
+.back-icon {
+  font-size: 24px;
+  padding: 1rem;
+  color: #DDE55C;
+}
+
+.ajustes-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  color: #DDE55C;
+}
+
+.ajustes-section {
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.control-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #DDE55C;
+}
+
+.ajustes-range {
+  width: 150px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #2B2B2C;
+  cursor: pointer;
+}
+
+.nav-item span {
+  color: #DDE55C;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.logout-btn {
+  --background: #2B2B2C;
+  color: white;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  margin: 0rem auto;
+  display: block;
+}

@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true" class="bg">
+  <div class="container">
+    <ion-icon name="arrow-back-outline" class="back-icon" routerLink="/ajustes"></ion-icon>
+    <h1 class="titulo">Generales</h1>
+
+    <div class="setting-row">
+      <span class="label">Idioma</span>
+      <ion-select interface="popover" value="es" class="select-custom">
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </div>
+
+    <div class="setting-row">
+      <span class="label">Ahorro de batería</span>
+      <ion-toggle color="secondary"></ion-toggle>
+    </div>
+  </div>
+</ion-content>

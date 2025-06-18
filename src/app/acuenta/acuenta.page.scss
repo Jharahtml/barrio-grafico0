@@ -1,0 +1,101 @@
+.ajustes-bg, .cuenta-bg {
+  --background: #1D1D20;
+  color: white;
+}
+
+.back-icon {
+  font-size: 24px;
+  padding: 1rem;
+  color: #DDE55C;
+}
+
+.ajustes-title, .cuenta-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  color: #DDE55C;
+}
+
+.control-group {
+  padding: 0 1.5rem;
+  margin-top: 1rem;
+}
+
+.control-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #DDE55C;
+}
+
+.ajustes-range {
+  width: 150px;
+}
+
+.nav-list {
+  padding: 1rem;
+  border-top: 1px solid #2B2B2C;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #2B2B2C;
+  cursor: pointer;
+}
+
+.nav-item span {
+  color: #DDE55C;
+}
+
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.logout-btn {
+  --background: #2B2B2C;
+  color: white;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  margin: 3rem auto;
+  display: block;
+}
+
+
+.cuenta-subtitle {
+  color: #DDE55C;
+  margin: 2rem 1.5rem 1rem;
+}
+
+.cuenta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 1.5rem;
+  color: white;
+}
+
+.cuenta-label {
+  color: #DDE55C;
+}
+
+.cuenta-a {
+  color: gray;;
+}
+
+.cuenta-email {
+  color: gray;
+  font-size: 0.85rem;
+}
+
+.check-icon {
+  color: #AD74D6;
+  font-size: 24px;
+}
