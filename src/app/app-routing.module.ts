@@ -102,7 +102,19 @@ const routes: Routes = [
   {
     path: 'editar1',
     loadChildren: () => import('./editar1/editar1.module').then( m => m.Editar1PageModule)
+  },  {
+    path: 'hiseventos',
+    loadChildren: () => import('./hiseventos/hiseventos.module').then( m => m.HiseventosPageModule)
+  },
+  {
+    path: 'hismisiones',
+    loadChildren: () => import('./hismisiones/hismisiones.module').then( m => m.HismisionesPageModule)
+  },
+  {
+    path: 'histradeos',
+    loadChildren: () => import('./histradeos/histradeos.module').then( m => m.HistradeosPageModule)
   }
+
 
 ];
 

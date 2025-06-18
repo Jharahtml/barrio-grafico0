@@ -1,0 +1,72 @@
+<ion-content [fullscreen]="true" class="bg">
+  <div class="container">
+    <ion-icon name="arrow-back-outline" class="back-icon" routerLink="/profile"></ion-icon>
+    <h1 class="titulo">Tradeos</h1>
+    <div class="barra"></div>
+
+    <div class="tarjeta">
+      <div class="tarjeta-info">
+        <div class="titulo-tarjeta">Carta</div>
+        <div class="detalle">Tradeo con Jugador1</div>
+      </div>
+      <ion-icon name="copy-outline" class="icono-tradeo"></ion-icon>
+    </div>
+    <div class="barra-sub"></div>
+
+    <div class="tarjeta">
+      <div class="tarjeta-info">
+        <div class="titulo-tarjeta">Carta</div>
+        <div class="detalle">Tradeo con Jugador2</div>
+      </div>
+      <ion-icon name="copy-outline" class="icono-tradeo"></ion-icon>
+    </div>
+    <div class="barra-sub"></div>
+
+    <div class="tarjeta">
+      <div class="tarjeta-info">
+        <div class="titulo-tarjeta">Carta</div>
+        <div class="detalle">Tradeo con Jugador3</div>
+      </div>
+      <ion-icon name="copy-outline" class="icono-tradeo"></ion-icon>
+    </div>
+  </div>
+
+  <!-- 🔸 Barrita divisora justo encima de los botones -->
+  <div class="footer-divider"></div>
+
+  <!-- 🔹 Botonera fija abajo -->
+  <div class="bottom-buttons fixed-buttons">
+    <ion-button
+      fill="clear"
+      class="icon-button"
+      routerLink="/hiseventos"
+    >
+      <div>
+        <ion-icon name="calendar-outline"></ion-icon>
+        <span>EVENTOS</span>
+      </div>
+    </ion-button>
+
+    <ion-button
+      fill="clear"
+      class="icon-button"
+      routerLink="/hismisiones"
+    >
+      <div>
+        <ion-icon name="people-outline"></ion-icon>
+        <span>MISIONES</span>
+      </div>
+    </ion-button>
+
+    <ion-button
+      fill="clear"
+      class="icon-button active"
+      routerLink="/histradeos"
+    >
+      <div>
+        <ion-icon name="swap-horizontal-outline"></ion-icon>
+        <span>TRADEOS</span>
+      </div>
+    </ion-button>
+  </div>
+</ion-content>

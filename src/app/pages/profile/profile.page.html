@@ -38,11 +38,14 @@
 
   <!-- Menú inferior (del segundo código) -->
   <div class="icon-grid">
-    <div class="icon-button">
-      <ion-icon name="bar-chart-outline"></ion-icon>
-      <span>HISTORIAL</span>
-    </div>
     
+    <ion-button fill="clear" class="icon-button" routerLink="/hiseventos">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+      <ion-icon name="bar-chart-outline" style="font-size: 24px;"></ion-icon>
+      <span>HISTORIAL</span>
+      </div>
+    </ion-button>
+
     <ion-button fill="clear" class="icon-button" routerLink="/amigos">
       <div style="display: flex; flex-direction: column; align-items: center;">
       <ion-icon name="people-outline" style="font-size: 24px;"></ion-icon>

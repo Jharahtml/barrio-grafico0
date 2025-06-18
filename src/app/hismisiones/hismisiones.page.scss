@@ -1,0 +1,163 @@
+.bg {
+  --background: #1D1D20;
+}
+
+.container {
+  padding: 20px;
+}
+
+.back-icon {
+  color: #DDE55C;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.titulo {
+  color: #AD74D6;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.barra {
+  height: 4px;
+  background: linear-gradient(to right, #AD74D6, #DDE55C);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.barra-sub {
+  height: 3px;
+  background-color: #AD74D6;
+  margin: 10px 0 20px 0;
+  border-radius: 10px;
+}
+
+.tarjeta {
+  background-color: #2B2B2C;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-tarjeta {
+  color: #DDE55C;
+  font-weight: bold;
+}
+
+.detalle {
+  color: #AD74D6;
+  font-size: 14px;
+}
+
+.puntos {
+  color: #DDE55C;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icono-tradeo {
+  font-size: 20px;
+  color: #AD74D6;
+}
+
+.tabs {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #AD74D6;
+  background-color: #2B2B2C;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.tab.selected {
+  background-color: #AD74D6;
+  color: white;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+.icon-button {
+  background-color: #2B2B2C;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #AD74D6;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+
+  ion-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+}
+
+.icon-button.active {
+  background-color: #AD74D6;
+  color: #2B2B2C;
+
+  ion-icon {
+    color: #2B2B2C;
+  }
+}
+
+.footer-divider {
+  position: fixed;
+  bottom: 80px; // Ajustá según la altura de los botones
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background-color: #AD74D6;
+  border-radius: 10px;
+  z-index: 1001; // por encima del contenido, debajo de los botones
+}
+
+.fixed-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1002; // encima de la barrita
+  background-color: #1D1D20;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+
