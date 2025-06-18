@@ -7,9 +7,9 @@
       <ion-avatar class="avatar-border large-avatar">
         <img alt="" src="assets/amigoPerfil.png" />
       </ion-avatar>
-      <ion-label class="username">{{amigo.name}}</ion-label>
-      <ion-label class="level">NIVEL: {{amigo.level}}</ion-label>
-      <ion-label class="points">{{amigo.points}}</ion-label>
+      <ion-label class="username">{{amigo?.name}}</ion-label>
+      <ion-label class="level">NIVEL: {{amigo?.level || 'Sin registro'}}</ion-label>
+      <ion-label class="points">{{amigo?.points || 0}} pts</ion-label>
     </div>
 
     <!-- Carta favorita -->
@@ -19,12 +19,12 @@
       </ion-card-header>
       <ion-card-content>
         <div class="card-horizontal">
-          <img alt="" [src]="amigo.cartaFavorita.image" class="card-img" />
+          <img alt="" [src]="amigo.cartaFavorita.image || 'assets/default.png'" class="card-img" />
           <div class="card-info">
-            <p><strong>Artista: </strong>{{amigo.cartaFavorita.artist}}</p>
-            <p><strong>Técnica: </strong>{{amigo.cartaFavorita.technique || ''}}</p>
-            <p><strong>Rareza: </strong>{{amigo.cartaFavorita.type}}</p>
-            <p><strong>Ubicación: </strong>{{amigo.cartaFavorita.address}}</p>
+            <p><strong>Artista: </strong>{{amigo.cartaFavorita?.artist || "Sin registro"}}</p>
+            <p><strong>Técnica: </strong>{{amigo.cartaFavorita?.technique || 'Sin registro'}}</p>
+            <p><strong>Rareza: </strong>{{amigo.cartaFavorita?.type || 'Sin registro'}}</p>
+            <p><strong>Ubicación: </strong>{{amigo.cartaFavorita?.address || 'Sin registro'}}</p>
           </div>
         </div>
       </ion-card-content>
@@ -34,8 +34,8 @@
     <h4 class="section-title">Actividad</h4>
     <ion-card class="activity-card" >
       <ion-card-content class="compact-content">
-        ¡Jugador ha encontrado un SHON!
-        <small>2 días</small>
+        {{amigo.actividad?.task || 'Sin actividad reciente'}}
+        <small>{{amigo.actividad?.date || 'Sin registro'}}</small>
       </ion-card-content>
     </ion-card>
 
@@ -44,7 +44,7 @@
     <ion-card class="trade-card" *ngIf="amigo?.trade?.length > 0">
       <ion-card-content class="compact-content">
         <div *ngFor="let intercambio of amigo?.trade">
-          <img alt="Intercambio" [src]="intercambio.image || 'assets/img/default-trade.png'" class="card-img-trade" />
+          <img alt="Intercambio" [src]="intercambio?.image || 'assets/default.png'" class="card-img-trade" />
         </div>
       </ion-card-content>
     </ion-card>

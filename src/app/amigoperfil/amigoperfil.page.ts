@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
   standalone: false,
 })
 export class AmigoperfilPage implements OnInit {
-  amigo: any;
+  amigo: any = {};
   constructor(
     public db: DatabaseService,
     public route: ActivatedRoute,
