@@ -1,6 +1,6 @@
 .mi-header {
-  --background: #AD74D6; /* azul */
-  color: white; /* texto */
+  --background: #AD74D6;
+  color: white;
 }
 
 ion-toolbar {
@@ -8,48 +8,55 @@ ion-toolbar {
   color: white;
 }
 
+.menucolor {
+  --background: #AD74D6;
+  position: relative;
+}
+
+.menu-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .imagenmenu {
+  width: 100%;
+  height: auto;
   display: block;
 }
-.menucolor{
-    --background: #AD74D6;
-}
 
-.imageneventos{
+/* Posiciones exactas, escalables */
+.imageneventos {
+  position: absolute;
   top: 37%;
-  left: 30%;
-  position: absolute;
-  width: 75px;
-  height: auto;
+  left: 31%;
+  width: 20vw;
 }
-.imagenbarrio{
-  top: 11%;
-  left: 47%;
-  position: absolute;
-  width: 85px;
-  height: auto;
 
+.imagenbarrio {
+  position: absolute;
+  top: 11%;
+  left: 48%;
+  width: 23vw;
 }
-.imagencomercio{
+
+.imagencomercio {
+  position: absolute;
   top: 46%;
   left: 65%;
-  position: absolute;
-  width: 85px;
-  height: auto;
+  width: 23vw;
 }
-.imagenlupita{
-  top: 63%;
-  left: 35%;
+
+.imagenlupita {
   position: absolute;
-  width: 62px;
-  height: auto;
+  top: 64%;
+  left: 37%;
+  width: 14vw;
 }
-.imagencarita{
+
+.imagencarita {
+  position: absolute;
   top: 28%;
-  left: 53%;
-  position: absolute;
-  width: 46px;
-  height: auto;
+  left: 54%;
+  width: 12vw;
 }
-
-
