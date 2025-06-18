@@ -44,7 +44,9 @@ ngOnInit() {
         }
          this.db.getDocumentById('users', user.uid).subscribe(userData => {
       //this.amigos = userData?.amigos || [];
-      const amigoIds: string[] = userData?.amigos || [];
+      const amigoIds: string[] = (userData?.amigos || []).map((amigo:any)=>{
+        return typeof amigo === 'string' ? amigo : amigo.id;
+      });
 
 if (amigoIds.length > 0) {
   Promise.all(amigoIds.map(id => this.db.getDocumentById('users', id).toPromise()))
