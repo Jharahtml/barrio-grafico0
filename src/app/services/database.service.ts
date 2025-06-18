@@ -116,12 +116,20 @@ getCartas(uid: string): Observable<any[]> {
   });
 }
   
-//Subcolección de cartas
+//1ra. Subcolección
 getSubcollection<T>(collectionName: string, docId: string, subcollectionName: string) {
   return this.firestore.collection(collectionName)
     .doc(docId)
     .collection<T>(subcollectionName)
     .valueChanges({ idField: 'id' });
+}
+
+// 2. Una versión protegida por runInInjectionContext
+getSubcollectionSafe<T>(collectionName: string, docId: string, subcollectionName: string): Observable<T[]> {
+  const path = `${collectionName}/${docId}/${subcollectionName}`;
+  return runInInjectionContext(this.injector, () => {
+    return this.firestore.collection<T>(path).valueChanges({ idField: 'id' });
+  });
 }
   
 addToSubcollection(path: string, data: any) {
@@ -129,7 +137,40 @@ addToSubcollection(path: string, data: any) {
     return this.firestore.collection(path).add(data);
   });
 }
+//solicitudes de amistad
+async enviarSolicitudAmistad(miUid: string, amigoId: string, amigoData: any) {
+  return runInInjectionContext(this.injector, async () => {
+    const envioRef = this.firestore.collection(`users/${miUid}/solicitudes_enviadas`);
+    const reciboRef = this.firestore.collection(`users/${amigoId}/solicitudes_recibidas`);
 
+    await envioRef.doc(amigoId).set({
+      ...amigoData,
+      estado: 'pendiente',
+      timestamp: new Date()
+    });
+
+    await reciboRef.doc(miUid).set({
+      estado: 'pendiente',
+      timestamp: new Date()
+    });
+  });
+}
+
+// Verificar si ya fue enviada
+checkSolicitudEnviada(miUid: string, amigoId: string) {
+  return this.firestore.doc(`users/${miUid}/solicitudes_enviadas/${amigoId}`).valueChanges();
+}
+
+//cancelar una solicitud de amistad
+async cancelarSolicitud(miUid: string, amigoId: string) {
+  return runInInjectionContext(this.injector, async () => {
+    const envioRef = this.firestore.collection(`users/${miUid}/solicitudes_enviadas`).doc(amigoId);
+    const reciboRef = this.firestore.collection(`users/${amigoId}/solicitudes_recibidas`).doc(miUid);
+
+    await envioRef.delete();
+    await reciboRef.delete();
+  });
+}
 /* async findDocumentInSubcollection(path: string, field: string, value: any): Promise<any | null> {
     const snapshot = await firstValueFrom(
       this.afs.collection(path, ref => ref.where(field, '==', value)).get()

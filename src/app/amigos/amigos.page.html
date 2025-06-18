@@ -16,15 +16,31 @@
     <!-- Lista de amigos -->
     <ion-list class="lista-amigos" >
       <ion-item class="amigo-item" *ngFor="let amigo of resultadoBusqueda.length > 0 ? resultadoBusqueda : amigos"
-            [routerLink]="['/amigoperfil', amigo.id]">
+            >
 
         <ion-avatar slot="start">
           <img alt="Foto de perfil" src="{{amigo?.avatar}}" />
         </ion-avatar>
         <ion-label>
-          <h2 class="nombre">{{amigo?.name}}</h2>
+          <h2 class="nombre" [routerLink]="['/amigoperfil', amigo.id]">{{amigo?.name}}</h2>
           <p class="id">ID:{{amigo?.id}}</p>
         </ion-label>
+  <!-- Botón "Añadir" solo si es resultado de búsqueda, no amigo y no solicitud enviada -->
+  <ion-button class="añadir"
+    slot="end" 
+    *ngIf="resultadoBusqueda.length > 0 && !esAmigo(amigo.id) && !solicitudesEnviadas.includes(amigo.id)"
+    (click)="enviarSolicitud(amigo)">
+    Añadir
+  </ion-button>
+
+  <!-- Botón alternativo cuando ya fue enviada -->
+  <ion-button 
+    slot="end" 
+    fill="outline"
+    disabled
+    *ngIf="resultadoBusqueda.length > 0 && !esAmigo(amigo.id) && solicitudesEnviadas.includes(amigo.id)">
+    Enviada
+  </ion-button>
       </ion-item>
     </ion-list>
     <div *ngIf="amigos.length === 0">
