@@ -1,7 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button style="color: #DDE55C;" menu="m1"></ion-menu-button>
+      <!-- Mostrar hamburguesa solo si no hay carta escaneada -->
+      <ion-menu-button *ngIf="!objetoJson" style="color: #DDE55C;" menu="m1"></ion-menu-button>
+
+      <!-- Mostrar flecha atrás si hay carta escaneada -->
+      <ion-icon *ngIf="objetoJson" name="arrow-back-outline" class="back-icon" (click)="volverAlMapa()"></ion-icon>
     </ion-buttons>
     <ion-buttons routerLink="/notificaciones" class="noti" slot="end">
       <ion-icon style="color: #DDE55C;" name="notifications"></ion-icon>
@@ -9,14 +13,25 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" *ngIf="!qr.scan">
+
     <!-- <h2>Resultado:{{qr.scanResult}}</h2> -->
-    <div *ngIf="objetoJson ; else mostrarMapa" >
-    <h2>{{JsonData.name}}</h2>
-    <img [src]="JsonData.image" alt="Imagen del QR">
-    <p>{{JsonData.points}}</p>
-    <ion-button (click)="volverAlMapa()">Volver al mapa</ion-button>
+    <div *ngIf="objetoJson ; else mostrarMapa" class="carta-contenedor">
+
+      <h2 class="titulo">¡Obtuviste la siguiente carta!</h2>
+
+      <div class="carta-marco">
+        <img [src]="JsonData.image" alt="Imagen del QR" class="carta-img">
+      </div>
+
+      <div class="puntos">
+        <ion-icon name="logo-usd"></ion-icon>
+        <span>{{ JsonData.points }}</span>
+      </div>
     </div>
+
+
 <ng-template #mostrarMapa>
   <div id="map" style="height: 100%;" ></div>
   <ion-button id="map-button" shape="round" (click)="Scan()">

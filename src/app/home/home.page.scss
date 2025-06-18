@@ -1,6 +1,5 @@
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -16,9 +15,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -28,11 +25,11 @@
 
 #map-button {
   position: fixed;
-  bottom: 20px; /* Ajusta la distancia desde abajo */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: 80px;    /* Tamaño personalizado */
+  width: 80px;
   height: 80px;
   font-size: 8px;
   --border-radius: 50%;
@@ -41,18 +38,90 @@
   --background-activated: #DDE55C;
   --background-focused: #DDE55C;
 }
-.iconoscan{
-  width: 30px;    /* Tamaño personalizado */
+
+.iconoscan {
+  width: 30px;
   height: 30px;
+  color: var(--ion-color-primary);
 }
-.button-label{
+
+.button-label {
   position: absolute;
   bottom: 15px;
   color: var(--ion-color-primary);
 }
-.iconoscan{
-  color: var(--ion-color-primary)
+
+.noti {
+  /* margen personalizado si hace falta */
 }
-.noti{
-  /* margin-right: 20px; */
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carta-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start; /* ← empuja todo hacia arriba */
+  background-color: #1D1D20;
+  height: 100%;
+  padding: 32px 16px 16px;
+  color: #DDE55C;
+  text-align: center;
+
+  animation: fadeSlideIn 0.6s ease-out;
+}
+
+.back-icon {
+  color: #DDE55C;
+  font-size: 24px;
+  position: absolute;
+  top: 4px;
+  left: 16px;
+  z-index: 999; /* ← asegura que esté visible encima de todo */
+  padding: 0;
+}
+
+.titulo {
+  font-size: 22px; /* ← más grande */
+  font-weight: bold;
+  margin: 48px 0 20px; /* ← sube más el contenido */
+  color: #DDE55C;
+}
+
+.carta-marco {
+  /* Quitamos el borde rosa */
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.carta-img {
+  width: 220px;
+  height: auto;
+  border-radius: 8px;
+  background-color: #7CE4A0;
+}
+
+.puntos {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  background-color: #AD74D6;
+  color: black;
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.puntos ion-icon {
+  margin-right: 8px;
 }

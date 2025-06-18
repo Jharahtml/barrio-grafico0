@@ -24,18 +24,6 @@ export class HomePage implements OnInit {
     public authService: AuthService,
     public qr: QrService
   ){
-    /* this.db.fetchFirestoreCollection('artspots')
-    .subscribe((data: any) => {
-      if (data && data.length > 0) {
-        this.items = data;
-        console.log("Datos cargados correctamente:", this.items);
-        this.loadMap();
-        this.getCurrentLocation();
-      }
-      else{
-        console.error("No se encontraron datos en Firestore.");
-      }
-    }); */
     
   }
 
